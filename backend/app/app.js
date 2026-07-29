@@ -66,9 +66,6 @@ app.get("/reserva", async (req, res) => {
     }
 });
 
-app.get("/", (req, res) => {
-    res.send(`Hola!`);
-})
 app.listen(port, () => {
     console.log(`App de ejemplo escuchando en el puerto: ${port}`);
-})
+});
