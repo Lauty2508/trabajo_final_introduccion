@@ -8,7 +8,19 @@ import { endpointsViaje } from './api/viaje.js';
 
 
 const app = express();
+const cors = require("cors");
+const { Pool } = require("pg");
+const db = new Pool({
+    user: "postgres",
+    host: "localhost",
+    database: "postgres",
+    password: "123",
+    port: 5432,
+});
 const port = 3000;
+
+
+app.use(cors());
 
 // Para que Express sepa leer el cuerpo de la petición
 app.use(express.json())
@@ -20,9 +32,6 @@ app.use('/api/v1/plataforma', endpointsPlataforma);
 app.use('/api/v1/reserva', endpointsReserva);
 app.use('/api/v1/viaje', endpointsViaje);
 
-app.get("/", (req, res) => {
-    res.send(`Hola!`);
-})
 app.listen(port, () => {
     console.log(`App escuchando en el puerto: ${port}`);
 })
