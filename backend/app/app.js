@@ -1,8 +1,14 @@
-const express = require("express");
+import express from "express";
+
+import { endpointsNave } from './api/nave.js';
+import { endpointsPersona } from './api/pasajero.js';
+import { endpointsPlataforma } from './api/plataforma.js';
+import { endpointsReserva } from './api/reserva.js';
+import { endpointsViaje } from './api/viaje.js';
+
+
 const app = express();
 const cors = require("cors");
-const port = 3000;
-app.use(cors());
 const { Pool } = require("pg");
 const db = new Pool({
     user: "postgres",
@@ -11,61 +17,21 @@ const db = new Pool({
     password: "123",
     port: 5432,
 });
-app.get("/nave", async (req, res) => {
-    try {
-        const query = "SELECT * FROM NAVE;";
-        const resultado = await db.query(query);
-        res.json(resultado.rows);
-    } catch (error) {
-        console.error("Hubo un error:", error);
-        res.status(500).send("Error en la base de datos");
-    }
-});
+const port = 3000;
 
-app.get("/pasajeros", async (req, res) => {
-    try {
-        const query = "SELECT * FROM PASAJEROS;";
-        const resultado = await db.query(query);
-        res.json(resultado.rows);
-    } catch (error) {
-        console.error("Hubo un error:", error);
-        res.status(500).send("Error en la base de datos");
-    }
-});
 
-app.get("/plataforma", async (req, res) => {
-    try {
-        const query = "SELECT * FROM PLATAFORMA;";
-        const resultado = await db.query(query);
-        res.json(resultado.rows);
-    } catch (error) {
-        console.error("Hubo un error:", error);
-        res.status(500).send("Error en la base de datos");
-    }
-});
+app.use(cors());
 
-app.get("/viaje", async (req, res) => {
-    try {
-        const query = "SELECT * FROM VIAJE;";
-        const resultado = await db.query(query);
-        res.json(resultado.rows);
-    } catch (error) {
-        console.error("Hubo un error:", error);
-        res.status(500).send("Error en la base de datos");
-    }
-});
+// Para que Express sepa leer el cuerpo de la petición
+app.use(express.json())
 
-app.get("/reserva", async (req, res) => {
-    try {
-        const query = "SELECT * FROM RESERVA;";
-        const resultado = await db.query(query);
-        res.json(resultado.rows);
-    } catch (error) {
-        console.error("Hubo un error:", error);
-        res.status(500).send("Error en la base de datos");
-    }
-});
+// Para que el Router de Express permita acortar las URLs
+app.use('/api/v1/nave', endpointsNave);
+app.use('/api/v1/pasajero', endpointsPasajero);
+app.use('/api/v1/plataforma', endpointsPlataforma);
+app.use('/api/v1/reserva', endpointsReserva);
+app.use('/api/v1/viaje', endpointsViaje);
 
 app.listen(port, () => {
-    console.log(`App de ejemplo escuchando en el puerto: ${port}`);
-});
+    console.log(`App escuchando en el puerto: ${port}`);
+})
