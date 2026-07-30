@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { obtenerTodasNaves, obtenerUnaNave, agregarNave, eliminarNave } from '../db/nave.js';
 
-const endpointsNave = Router();
+export const endpointsNave = Router();
 
 // Para obtener todas las naves
 endpointsNave.get("/", async (req, res) => {

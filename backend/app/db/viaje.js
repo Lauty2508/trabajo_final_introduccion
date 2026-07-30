@@ -1,4 +1,4 @@
-import { db } from '../pool.js';
+import { db } from './pool.js';
 
 // Para obtener todos los viajes
 export async function obtenerTodosViajes(){

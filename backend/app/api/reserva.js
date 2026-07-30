@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { obtenerTodasReservas, agregarReserva, eliminarReserva } from '../db/reserva.js';
 
-const endpointsReserva = Router();
+export const endpointsReserva = Router();
 
 // Para obtener todas las reservas
 endpointsReserva.get("/", async (req, res) => {

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { obtenerTodasPlataformas, obtenerUnaPlataforma, agregarPlataforma, eliminarPlataforma } from '../db/plataforma.js';
 
-const endpointsPlataforma = Router();
+export const endpointsPlataforma = Router();
 
 // Para obtener todas las plataformas
 endpointsPlataforma.get("/", async (req, res) => {

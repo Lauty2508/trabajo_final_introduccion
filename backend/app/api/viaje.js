@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { obtenerTodosViajes, agregarViaje } from '../db/viaje.js';
 
-const endpointsViaje = Router();
+export const endpointsViaje = Router();
 
 // Para obtener todos los viajes
 endpointsViaje.get("/", async (req, res) => {

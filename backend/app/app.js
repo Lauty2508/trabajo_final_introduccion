@@ -1,22 +1,13 @@
 import express from "express";
-
+import cors from "cors";
 import { endpointsNave } from './api/nave.js';
-import { endpointsPersona } from './api/pasajero.js';
+import { endpointsPasajero } from './api/pasajero.js';
 import { endpointsPlataforma } from './api/plataforma.js';
 import { endpointsReserva } from './api/reserva.js';
 import { endpointsViaje } from './api/viaje.js';
 
 
 const app = express();
-const cors = require("cors");
-const { Pool } = require("pg");
-const db = new Pool({
-    user: "postgres",
-    host: "localhost",
-    database: "postgres",
-    password: "123",
-    port: 5432,
-});
 const port = 3000;
 
 
