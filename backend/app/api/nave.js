@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { obtenerTodasNaves, obtenerUnaNave, agregarNave, eliminarNave } from '../db/nave.js';
+import { actualizarNave, agregarNave, eliminarNave, obtenerTodasNaves, obtenerUnaNave } from '../db/nave.js';
 
 const endpointsNave = Router();
 
@@ -37,4 +37,21 @@ endpointsNave.delete("/", async (req, res) => {
     res.status(200).json({ message: "Nave eliminada." });
 }) 
 
-
+// Para actualizar una nave
+endpointsNave.put("/:id", async (req, res) => {
+    const id = req.params.id;
+    const exito = await actualizarNave(
+        id,
+        req.body.modelo,
+        req.body.tiempo,
+        req.body.anio,
+        req.body.kilometraje,
+        req.body.capacidad,
+        req.body.estado
+    );
+    if (exito) {
+        res.status(200).json({ message: "Nave actualizada correctamente." });
+    } else {
+        res.status(404).json({ message: "No se encontro la nave para actualizar." });
+    }
+})
