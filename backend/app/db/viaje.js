@@ -20,3 +20,10 @@ export async function actualizarViaje(id, fecha, horario, duracion, estado, plat
     const res = await db.query(query, [fecha, horario, duracion, estado, plataforma_origen, plataforma_destino, naves, id]);
     return res.rowCount == 1;
 }
+
+// Para eliminar un viaje
+export async function eliminarViaje(id){
+    const query = "DELETE FROM viaje WHERE Viaje_id = $1";
+    const res = await db.query(query, [id]);
+    return res.rowCount == 1;
+}

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { actualizarViaje, agregarViaje, obtenerTodosViajes } from '../db/viaje.js';
+import { actualizarViaje, agregarViaje, eliminarViaje, obtenerTodosViajes } from '../db/viaje.js';
 
 const endpointsViaje = Router();
 
@@ -41,5 +41,13 @@ endpointsViaje.put("/:id", async (req, res) => {
     } else {
         res.status(404).json({ message: "No se encontro el viaje para actualizar." });
     }
+})
+
+// Para eliminar un viaje
+endpointsViaje.delete("/", async (req, res) => {
+    const viaje = await eliminarViaje(
+        req.body.id
+    );
+    res.status(200).json({message: "Viaje eliminado."});
 })
 
