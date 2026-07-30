@@ -20,3 +20,10 @@ export async function eliminarReserva(id){
     const res = await db.query(query, [id]);
     return res.rowCount == 1;
 }
+
+// Para actualizar una reserva
+export async function actualizarReserva(id, asiento, fecha, precio, vuelo, pasajero) {
+    const query = "UPDATE reserva SET Codigo_asiento = $1, Fecha_reserva = $2, Precio_pasaje = $3, Vuelo_id = $4, Pasajero_id = $5 WHERE Reserva_id = $6;";
+    const res = await db.query(query, [asiento, fecha, precio, vuelo, pasajero, id]);
+    return res.rowCount == 1;
+}
