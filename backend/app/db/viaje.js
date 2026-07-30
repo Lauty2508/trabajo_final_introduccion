@@ -13,3 +13,10 @@ export async function agregarViaje(fecha, horario, duracion, estado, plataforma_
     const res = await db.query(query, [fecha, horario, duracion, estado, plataforma_origen, plataforma_destino, naves]);
     return res.rowCount == 1;
 }
+
+// Para actualizar un viaje
+export async function actualizarViaje(id, fecha, horario, duracion, estado, plataforma_origen, plataforma_destino, naves) {
+    const query = "UPDATE viaje SET Fecha_despegue = $1, Horario_salida = $2, Duracion = $3, Estado_despegues = $4, Plataforma_origen_id = $5, Plataforma_destino_id = $6, Naves_id = $7 WHERE Viaje_id = $8;";
+    const res = await db.query(query, [fecha, horario, duracion, estado, plataforma_origen, plataforma_destino, naves, id]);
+    return res.rowCount == 1;
+}
