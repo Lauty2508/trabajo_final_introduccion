@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { agregarReserva, eliminarReserva, obtenerTodasReservas } from '../db/reserva.js';
+import { actualizarReserva, agregarReserva, eliminarReserva, obtenerTodasReservas } from '../db/reserva.js';
 
 const endpointsReserva = Router();
 
