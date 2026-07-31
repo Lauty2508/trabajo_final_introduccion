@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { obtenerTodasReservas, agregarReserva, eliminarReserva } from '../db/reserva.js';
+import { actualizarReserva, agregarReserva, eliminarReserva, obtenerTodasReservas } from '../db/reserva.js';
 
 const endpointsReserva = Router();
 
@@ -29,4 +29,20 @@ endpointsReserva.delete("/", async (req, res) => {
     res.status(200).json({message: "Reserva eliminada."});
 }) 
 
-
+// Para actualizar una reserva
+endpointsReserva.put("/:id", async (req, res) => {
+    const id = req.params.id;
+    const exito = await actualizarReserva(
+        id,
+        req.body.asiento,
+        req.body.fecha,
+        req.body.precio,
+        req.body.vuelo,
+        req.body.pasajero
+    );
+    if (exito) {
+        res.status(200).json({ message: "Reserva actualizada correctamente." });
+    } else {
+        res.status(404).json({ message: "No se encontro la reserva para actualizar." });
+    }
+})

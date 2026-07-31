@@ -27,3 +27,10 @@ export async function eliminarPlataforma(id){
     const res = await db.query(query, [id]);
     return res.rowCount == 1;
 }
+
+// Para actualizar una plataforma
+export async function actualizarPlataforma(id, pais, latitud, longitud, capacidad, estado) {
+    const query = "UPDATE plataforma SET Pais = $1, Latitud = $2, Longitud = $3, Capacidad_max_naves = $4, Estado_plataforma = $5 WHERE Plataforma_id = $6;";
+    const res = await db.query(query, [pais, latitud, longitud, capacidad, estado, id]);
+    return res.rowCount == 1;
+}

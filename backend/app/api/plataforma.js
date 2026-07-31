@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { obtenerTodasPlataformas, obtenerUnaPlataforma, agregarPlataforma, eliminarPlataforma } from '../db/plataforma.js';
+import { actualizarPlataforma, agregarPlataforma, eliminarPlataforma, obtenerTodasPlataformas, obtenerUnaPlataforma } from '../db/plataforma.js';
 
 const endpointsPlataforma = Router();
 
@@ -35,5 +35,23 @@ endpointsPlataforma.delete("/", async (req, res) => {
     );
     res.status(200).json({message: "Plataforma eliminada."});
 }) 
+
+// Para actualizar una plataforma
+endpointsPlataforma.put("/:id", async (req, res) => {
+    const id = req.params.id;
+    const exito = await actualizarPlataforma(
+        id,
+        req.body.pais,
+        req.body.latitud,
+        req.body.longitud,
+        req.body.capacidad,
+        req.body.estado
+    );
+    if (exito) {
+        res.status(200).json({ message: "Plataforma actualizada correctamente." });
+    } else {
+        res.status(404).json({ message: "No se encontro la plataforma para actualizar." });
+    }
+})
 
 

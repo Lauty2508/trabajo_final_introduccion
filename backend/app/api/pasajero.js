@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { obtenerTodosPasajeros, obtenerUnPasajero, agregarPasajero, eliminarPasajero } from '../db/pasajero.js';
+import { actualizarPasajero, agregarPasajero, eliminarPasajero, obtenerTodosPasajeros, obtenerUnPasajero } from '../db/pasajero.js';
 
 const endpointsPasajero = Router();
 
@@ -38,4 +38,22 @@ endpointsPasajero.delete("/", async (req, res) => {
     res.status(200).json({message: "Pasajero eliminado."});
 }) 
 
-
+// Para actualizar un pasajero
+endpointsPasajero.put("/:id", async (req, res) => {
+    const id = req.params.id;
+    const exito = await actualizarPasajero(
+        id,
+        req.body.documento,
+        req.body.nombre,
+        req.body.apellido,
+        req.body.edad,
+        req.body.telefono,
+        req.body.salud,
+        req.body.direccion
+    );
+    if (exito) {
+        res.status(200).json({ message: "Pasajero actualizado correctamente." });
+    } else {
+        res.status(404).json({ message: "No se encontro el pasajero para actualizar." });
+    }
+})

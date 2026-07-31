@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { obtenerTodosViajes, agregarViaje } from '../db/viaje.js';
+import { actualizarViaje, agregarViaje, eliminarViaje, obtenerTodosViajes } from '../db/viaje.js';
 
 const endpointsViaje = Router();
 
@@ -23,4 +23,31 @@ endpointsViaje.post("/", async (req, res) => {
     res.status(201).json({message: "Viaje agregado."});
 }) 
 
+// Para actualizar un viaje
+endpointsViaje.put("/:id", async (req, res) => {
+    const id = req.params.id;
+    const exito = await actualizarViaje(
+        id,
+        req.body.fecha,
+        req.body.horario,
+        req.body.duracion,
+        req.body.estado,
+        req.body.plataforma_origen,
+        req.body.plataforma_destino,
+        req.body.naves
+    );
+    if (exito) {
+        res.status(200).json({ message: "Viaje actualizado correctamente." });
+    } else {
+        res.status(404).json({ message: "No se encontro el viaje para actualizar." });
+    }
+})
+
+// Para eliminar un viaje
+endpointsViaje.delete("/", async (req, res) => {
+    const viaje = await eliminarViaje(
+        req.body.id
+    );
+    res.status(200).json({message: "Viaje eliminado."});
+})
 

@@ -27,3 +27,10 @@ export async function eliminarPasajero(id){
     const res = await db.query(query, [id]);
     return res.rowCount == 1;
 }
+
+// Para actualizar un pasajero
+export async function actualizarPasajero(id, documento, nombre, apellido, edad, telefono, salud, direccion) {
+    const query = "UPDATE pasajeros SET Documento = $1, Nombre = $2, Apellido = $3, Edad = $4, Telefono = $5, Estado_salud = $6, Direccion = $7 WHERE Pasajero_id = $8;";
+    const res = await db.query(query, [documento, nombre, apellido, edad, telefono, salud, direccion, id]);
+    return res.rowCount == 1;
+}

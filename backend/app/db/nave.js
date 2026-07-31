@@ -27,3 +27,10 @@ export async function eliminarNave(id){
     const res = await db.query(query, [id]);
     return res.rowCount == 1;
 }
+
+// Para actualizar una nave
+export async function actualizarNave(id, modelo, tiempo, anio, kilometraje, capacidad, estado) {
+    const query = "UPDATE nave SET Modelo = $1, Tiempo_de_uso = $2, Anio_fabricacion = $3, Kilometraje_recorrido = $4, Capacidad_max_pasajeros = $5, Estado = $6 WHERE Nave_id = $7;";
+    const res = await db.query(query, [modelo, tiempo, anio, kilometraje, capacidad, estado, id]);
+    return res.rowCount == 1;
+}
