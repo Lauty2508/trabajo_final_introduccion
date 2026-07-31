@@ -1,4 +1,23 @@
 services:
+  frontend:
+    image: node:22
+    working_dir: /app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./frontend:/app
+    command: npx http-server -p 8080 --cors
+    
+  backend:
+      image: node:22
+      working_dir: /app
+      ports: 
+        - "3000:3000"
+      volumes:
+        - ./backend/app:/app
+        - /app/node_modules
+      command: sh -c "npm install && exec npx nodemon app.js"
+
   db:
     image: postgres:15
     container_name: base_tp_postgres
@@ -9,4 +28,4 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./backend/app/db/init.sql:/docker-entrypoint-initdb.d/init.sql
