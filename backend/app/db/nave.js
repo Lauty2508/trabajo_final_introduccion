@@ -1,4 +1,4 @@
-import { db } from '../pool.js';
+import { db } from './pool.js';
 
 // Para obtener todas las naves
 export async function obtenerTodasNaves(){

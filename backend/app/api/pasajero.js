@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { actualizarPasajero, agregarPasajero, eliminarPasajero, obtenerTodosPasajeros, obtenerUnPasajero } from '../db/pasajero.js';
 
-const endpointsPasajero = Router();
+export const endpointsPasajero = Router();
 
 // Para obtener todos los pasajeros
 endpointsPasajero.get("/", async (req, res) => {
