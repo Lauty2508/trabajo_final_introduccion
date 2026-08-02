@@ -11,6 +11,10 @@ services:
   backend:
       image: node:22
       working_dir: /app
+      environment:
+        - DB_HOST=db
+        - DB_NAME=db_intro
+        - DB_PASS=123
       ports: 
         - "3000:3000"
       volumes:
