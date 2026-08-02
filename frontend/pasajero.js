@@ -1,0 +1,60 @@
+async function obtenerTodosPasajeros() {
+    const url = "http://localhost:3000/api/v1/pasajero";
+    const response = await fetch(url);
+    const pasajeros = await response.json();
+    const tablaPasajeros = document.getElementById("tabla-pasajeros");
+    tablaPasajeros.innerHTML = '';
+    pasajeros.forEach(pasajero => {
+
+        const fila = document.createElement("tr");
+        const filaId = document.createElement("th");
+        const filaDocumento = document.createElement("td");
+        const filaNombre = document.createElement("td");
+        const filaApellido = document.createElement("td");
+        const filaEdad = document.createElement("td");
+        const filaTelefono = document.createElement("td");
+        const filaEstado = document.createElement("td");
+        const filaDireccion = document.createElement("td");
+        const filaAcciones = document.createElement("td");
+
+        filaId.textContent = pasajero.pasajero_id;
+        filaDocumento.textContent = pasajero.documento;
+        filaNombre.textContent = pasajero.nombre;
+        filaApellido.textContent = pasajero.apellido;
+        filaEdad.textContent = pasajero.edad;
+        filaTelefono.textContent = pasajero.telefono;
+        filaEstado.textContent = pasajero.estado_salud;
+        filaDireccion.textContent = pasajero.direccion;
+
+        const botones = document.createElement("div");
+        botones.className = "buttons";
+
+        const botonModificar = document.createElement("button");
+        botonModificar.textContent = "Modificar";
+        botonModificar.className = "button is-info is-dark";
+
+        const botonEliminar = document.createElement("button");
+        botonEliminar.textContent = "Eliminar";
+        botonEliminar.className = "button is-danger is-dark";
+        botonEliminar.addEventListener("click", () => {
+            eliminarPasajero(pasajero.pasajero_id);
+        })
+
+        botones.appendChild(botonModificar);
+        botones.appendChild(botonEliminar);
+        filaAcciones.appendChild(botones);
+
+        fila.appendChild(filaId);
+        fila.appendChild(filaDocumento);
+        fila.appendChild(filaNombre);
+        fila.appendChild(filaApellido);
+        fila.appendChild(filaEdad);
+        fila.appendChild(filaTelefono);
+        fila.appendChild(filaEstado);
+        fila.appendChild(filaDireccion);
+        fila.appendChild(filaAcciones);
+
+        tablaPasajeros.appendChild(fila);
+    });
+}
+obtenerTodosPasajeros();

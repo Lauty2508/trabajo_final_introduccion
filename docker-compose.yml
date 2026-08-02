@@ -13,10 +13,18 @@ services:
       working_dir: /app
       ports: 
         - "3000:3000"
+      environment:
+        DB_HOST: db
+        DB_PORT: 5432
+        DB_USER: postgres
+        DB_PASSWORD: 123
+        DB_NAME: db_intro
       volumes:
         - ./backend/app:/app
         - /app/node_modules
       command: sh -c "npm install && exec npx nodemon app.js"
+      depends_on:
+        - db
 
   db:
     image: postgres:15
