@@ -69,3 +69,33 @@ async function eliminarPasajero(id) {
         await obtenerTodosPasajeros();
     }
 }
+
+async function nuevoPasajero() {
+    const documento = document.getElementById("pasajero-documento");
+    const nombre = document.getElementById("pasajero-nombre");
+    const apellido = document.getElementById("pasajero-apellido");
+    const edad = document.getElementById("pasajero-edad");
+    const telefono = document.getElementById("pasajero-telefono");
+    const estado = document.getElementById("pasajero-estado");
+    const direccion = document.getElementById("pasajero-direccion");
+
+    const url = `http://localhost:3000/api/v1/pasajero`;
+    const response = await fetch(url, {
+        method: "POST",
+        headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                documento: documento.value,
+                nombre: nombre.value,
+                apellido: apellido.value,
+                edad: parseInt(edad.value, 10),
+                telefono: telefono.value,
+                salud: estado.value,
+                direccion: direccion.value
+            })
+        });
+    if (response.status == 201) {
+        window.location.href = "http://localhost:8080/pasajero.html";
+    };
+}
