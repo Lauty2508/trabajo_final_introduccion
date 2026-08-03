@@ -31,11 +31,10 @@ endpointsPasajero.post("/", async (req, res) => {
 }) 
 
 // Para eliminar un pasajero
-endpointsPasajero.delete("/", async (req, res) => {
-    const pasajero = await eliminarPasajero(
-        req.body.id
-    );
-    res.status(200).json({message: "Pasajero eliminado."});
+endpointsPasajero.delete("/:id", async (req, res) => {
+    const id = req.params.id
+    const pasajero = await eliminarPasajero(id);
+    res.status(204).json({message: "Pasajero eliminado."});
 }) 
 
 // Para actualizar un pasajero

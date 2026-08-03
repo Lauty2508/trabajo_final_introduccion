@@ -57,4 +57,15 @@ async function obtenerTodosPasajeros() {
         tablaPasajeros.appendChild(fila);
     });
 }
-obtenerTodosPasajeros();
+
+async function eliminarPasajero(id) {
+    const url = `http://localhost:3000/api/v1/pasajero/${id}`;
+    const response = await fetch(url, {
+        method: "DELETE"
+    });
+
+    // Si la respuesta está entre 200 - 299, que se actualice.
+    if (response.ok) {
+        await obtenerTodosPasajeros();
+    }
+}

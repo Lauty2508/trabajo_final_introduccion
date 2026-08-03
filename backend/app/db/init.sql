@@ -43,6 +43,7 @@ Vuelo_id INT NOT NULL,
 Pasajero_id INT NOT NULL,
 foreign key (Vuelo_id) references VIAJE(Viaje_id),
 foreign key (Pasajero_id) references PASAJEROS(Pasajero_id)
+ON DELETE cascade
 );
 
 
