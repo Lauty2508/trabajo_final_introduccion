@@ -2,7 +2,7 @@ import { db } from './pool.js';
 
 // Para obtener todos los pasajeros
 export async function obtenerTodosPasajeros(){
-    const query = "SELECT * FROM pasajeros;";
+    const query = "SELECT * FROM pasajeros ORDER BY Pasajero_id ASC";
     const res = await db.query(query);
     return res.rows;
 }
