@@ -346,3 +346,191 @@ header h1 span {
         gap: 10px;
     }
 }
+
+
+.contenedor-gestion {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 60px 40px;
+
+    align-items: stretch;
+
+    text-align: left;
+}
+
+.encabezado-pagina {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.encabezado-pagina .etiqueta {
+    margin: 0 0 10px;
+
+    color: var(--color-naranja);
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.encabezado-pagina h2 {
+    margin: 0;
+
+    font-size: 38px;
+}
+
+.activo-link {
+    color: var(--color-naranja);
+
+    font-weight: bold;
+}
+.tabla-contenedor {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background-color: var(--fondo-secundario);
+
+    border: 1px solid var(--color-azul);
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+}
+
+thead {
+    background-color: rgba(29, 79, 122, 0.25);
+}
+
+th {
+    padding: 18px;
+
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+    text-align: left;
+
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 18px;
+
+    border-top: 1px solid rgba(154, 168, 184, 0.12);
+
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+}
+
+td strong {
+    color: var(--texto-principal);
+}
+
+tbody tr {
+    transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+    background-color: rgba(29, 79, 122, 0.12);
+}
+/* =========================
+   TABLAS DE GESTIÓN
+========================= */
+
+.tabla-contenedor {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background-color: var(--fondo-secundario);
+
+    border: 1px solid var(--color-azul);
+
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+}
+
+thead {
+    background-color: rgba(29, 79, 122, 0.25);
+}
+
+th {
+    padding: 18px;
+
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+
+    text-align: left;
+
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 18px;
+
+    border-top: 1px solid rgba(154, 168, 184, 0.12);
+
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+}
+
+td strong {
+    color: var(--texto-principal);
+}
+
+tbody tr {
+    transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+    background-color: rgba(29, 79, 122, 0.12);
+}
+
+.boton-tabla {
+    padding: 8px 16px;
+
+    border: 1px solid var(--color-naranja);
+
+    border-radius: 6px;
+
+    background-color: transparent;
+
+    color: var(--color-naranja);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.2s;
+}
+
+.boton-tabla:hover {
+    background-color: var(--color-naranja);
+
+    color: white;
+}
