@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobAL - Plataformas</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="../assets/logo.png" alt="GlobAL Space Travel Company">
+        </a>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="naves.html">Naves</a>
+            <a href="plataformas.html" class="activo-link">Plataformas</a>
+            <a href="pasajeros.html">Pasajeros</a>
+            <a href="viajes.html">Viajes</a>
+            <a href="reservas.html">Reservas</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-gestion">
+
+        <section class="encabezado-pagina">
+            <div>
+                <p class="etiqueta">INFRAESTRUCTURA OPERATIVA</p>
+                <h2>Plataformas de Lanzamiento</h2>
+            </div>
+
+            <button class="boton-principal">+ Nueva Plataforma</button>
+        </section>
+
+        <section class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Ubicación / Ciudad</th>
+                        <th>Capacidad Simultánea</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#PL-01</td>
+                        <td><strong>Base Espacial Córdoba</strong></td>
+                        <td>Córdoba, Argentina</td>
+                        <td>3 naves</td>
+                        <td><span class="estado disponible-texto">OPERATIVA</span></td>
+                        <td>
+                            <button class="boton-tabla">Editar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#PL-02</td>
+                        <td><strong>Puerto Estelar Tokio</strong></td>
+                        <td>Tokio, Japón</td>
+                        <td>5 naves</td>
+                        <td><span class="estado disponible-texto">OPERATIVA</span></td>
+                        <td>
+                            <button class="boton-tabla">Editar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#PL-03</td>
+                        <td><strong>Aeropuerto Suborbital París</strong></td>
+                        <td>París, Francia</td>
+                        <td>2 naves</td>
+                        <td><span class="estado mantenimiento-texto">EN MANTENIMIENTO</span></td>
+                        <td>
+                            <button class="boton-tabla">Editar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
