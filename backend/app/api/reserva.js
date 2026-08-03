@@ -18,7 +18,7 @@ endpointsReserva.post("/", async (req, res) => {
         req.body.vuelo,
         req.body.pasajero
     );
-    res.status(200).json({message: "Reserva agregada."});
+    res.status(201).json({message: "Reserva agregada."});
 }) 
 
 // Para eliminar una reserva
