@@ -17,7 +17,7 @@ export async function obtenerUnPasajero(id){
 // Para agregar un pasajero
 export async function agregarPasajero(documento, nombre, apellido, edad, telefono, salud, direccion){
     const query = "INSERT INTO pasajeros (Documento, Nombre, Apellido, Edad, Telefono, Estado_salud, Direccion) VALUES ($1, $2, $3, $4, $5, $6, $7, $8);";
-    const res = await db.query(query, [documento, nombre, apellido, edad, telefono, telefono, salud, direccion]);
+    const res = await db.query(query, [documento, nombre, apellido, edad, telefono, salud, direccion]);
     return res.rowCount == 1;
 }
 
