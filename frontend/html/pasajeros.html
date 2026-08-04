@@ -33,21 +33,96 @@
                 <h2>Pasajeros</h2>
             </div>
 
-            <button class="boton-principal">+ Registrar Pasajero</button>
+            <button id="btn-nuevo-pasajero" class="boton-principal">
+                + Registrar Pasajero
+            </button>
+        </section>
+
+        <section id="formulario-pasajero" class="formulario-contenedor">
+
+            <form id="form-pasajero">
+
+                <h3 id="titulo-formulario">Nuevo Pasajero</h3>
+
+                <input
+                    type="text"
+                    id="documento"
+                    placeholder="Documento"
+                    required>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Nombre"
+                    required>
+
+                <input
+                    type="text"
+                    id="apellido"
+                    placeholder="Apellido"
+                    required>
+
+                <input
+                    type="number"
+                    id="edad"
+                    placeholder="Edad"
+                    required>
+
+                <input
+                    type="text"
+                    id="telefono"
+                    placeholder="Teléfono"
+                    required>
+
+                <input
+                    type="text"
+                    id="salud"
+                    placeholder="Estado de salud"
+                    required>
+
+                <input
+                    type="text"
+                    id="direccion"
+                    placeholder="Dirección"
+                    required>
+
+                <div class="botones-formulario">
+
+                    <button
+                        type="button"
+                        id="btn-cancelar"
+                        class="boton-tabla">
+
+                        Cancelar
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="boton-principal">
+
+                        Guardar
+
+                    </button>
+
+                </div>
+
+            </form>
+
         </section>
 
         <section class="tabla-contenedor">
             <table>
                 <thead>
                     <tr>
-                        <th>ID / DNI</th>
-                        <th>Nombre Completo</th>
-                        <th>Correo Electrónico</th>
-                        <th>Nacionalidad</th>
+                        <th>ID</th>
+                        <th>Documento</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tabla-pasajeros">
                     <tr>
                         <td>38.912.405</td>
                         <td><strong>Sofía Rodríguez</strong></td>
@@ -80,7 +155,8 @@
         </section>
 
     </main>
-
+    <script src="../js/pasajeros.js"></script>
 </body>
+
 
 </html>
