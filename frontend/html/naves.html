@@ -33,7 +33,46 @@
                 <h2>Naves Espaciales</h2>
             </div>
 
-            <button class="boton-principal">+ Nueva Nave</button>
+            <button id="btn-nueva-nave" class="boton-principal">
+                + Nueva Nave
+            </button>
+        </section>
+        
+        <section id="formulario-nave" class="formulario-contenedor">
+
+            <form id="form-nave">
+
+                <h3 id="titulo-formulario">Nueva Nave</h3>
+
+                <input type="text" id="modelo" placeholder="Modelo" required>
+
+                <input type="number" id="tiempo" placeholder="Tiempo de uso" required>
+
+                <input type="number" id="anio" placeholder="Año de fabricación" required>
+
+                <input type="number" id="kilometraje" placeholder="Kilometraje recorrido" required>
+
+                <input type="number" id="capacidad" placeholder="Capacidad máxima de pasajeros" required>
+
+                <select id="estado">
+                    <option value="Operativa">Operativa</option>
+                    <option value="En mantenimiento">En mantenimiento</option>
+                    <option value="En revision tecnica">En revisión técnica</option>
+                    <option value="Fuera de servicio">Fuera de servicio</option>
+                </select>
+
+                <div class="botones-formulario">
+                    <button type="button" id="btn-cancelar" class="boton-tabla">
+                        Cancelar
+                    </button>
+
+                    <button type="submit" class="boton-principal">
+                        Guardar
+                    </button>
+                </div>
+
+            </form>
+
         </section>
 
         <section class="tabla-contenedor">
@@ -47,7 +86,7 @@
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tabla-naves">
                     <tr>
                         <td>#NV-01</td>
                         <td><strong>Astraea I</strong></td>
@@ -71,7 +110,7 @@
         </section>
 
     </main>
-
+    <script src="../js/naves.js"></script>
 </body>
 
 </html>
