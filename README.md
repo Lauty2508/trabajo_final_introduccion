@@ -14,7 +14,7 @@ Para ingresar a la carpeta principal del proyecto:
 bash:
 cd trabajo_final_introduccion
 ```
-## 🛠️ Abre y ejecuta el proyecto
+## 🛠️ Abrir y ejecutar el proyecto
 Para ejecutar el proyecto tenes que ir al archivo docker-compose.yml y ejecutar en tú terminal 
 ```
 bash:
