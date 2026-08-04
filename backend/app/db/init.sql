@@ -12,7 +12,7 @@ Nombre VARCHAR(40) NOT NULL,
 Apellido VARCHAR(40) NOT NULL,
 Edad INT NOT NULL CHECK(Edad>=0),
 Telefono VARCHAR(20),
-Estado_salud VARCHAR(30) NOT NULL,
+Estado_salud BOOLEAN NOT NULL,
 Direccion VARCHAR(30));
 
 create table PLATAFORMA(Plataforma_id SERIAL primary key,
