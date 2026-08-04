@@ -33,9 +33,80 @@
                 <h2>Plataformas de Lanzamiento</h2>
             </div>
 
-            <button class="boton-principal">+ Nueva Plataforma</button>
+            <button id="btn-nueva-plataforma"class="boton-principal">+ Nueva Plataforma</button>
         </section>
+        <section id="formulario-plataforma" class="formulario-contenedor">
 
+            <form id="form-plataforma">
+
+                <h3 id="titulo-formulario">
+                    Nueva Plataforma
+                </h3>
+
+                <input
+                    type="text"
+                    id="pais"
+                    placeholder="País"
+                    required>
+
+                <input
+                    type="number"
+                    id="latitud"
+                    placeholder="Latitud"
+                    step="any"
+                    required>
+
+                <input
+                    type="number"
+                    id="longitud"
+                    placeholder="Longitud"
+                    step="any"
+                    required>
+
+                <input
+                    type="number"
+                    id="capacidad"
+                    placeholder="Capacidad máxima de naves"
+                    required>
+
+                <select id="estado">
+
+                    <option value="Operativa">Operativa</option>
+
+                    <option value="En mantenimiento">
+                        En mantenimiento
+                    </option>
+
+                    <option value="Fuera de servicio">
+                        Fuera de servicio
+                    </option>
+
+                </select>
+
+                <div class="botones-formulario">
+
+                    <button
+                        type="button"
+                        id="btn-cancelar"
+                        class="boton-tabla">
+
+                        Cancelar
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="boton-principal">
+
+                        Guardar
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
         <section class="tabla-contenedor">
             <table>
                 <thead>
@@ -48,43 +119,12 @@
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>#PL-01</td>
-                        <td><strong>Base Espacial Córdoba</strong></td>
-                        <td>Córdoba, Argentina</td>
-                        <td>3 naves</td>
-                        <td><span class="estado disponible-texto">OPERATIVA</span></td>
-                        <td>
-                            <button class="boton-tabla">Editar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#PL-02</td>
-                        <td><strong>Puerto Estelar Tokio</strong></td>
-                        <td>Tokio, Japón</td>
-                        <td>5 naves</td>
-                        <td><span class="estado disponible-texto">OPERATIVA</span></td>
-                        <td>
-                            <button class="boton-tabla">Editar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#PL-03</td>
-                        <td><strong>Aeropuerto Suborbital París</strong></td>
-                        <td>París, Francia</td>
-                        <td>2 naves</td>
-                        <td><span class="estado mantenimiento-texto">EN MANTENIMIENTO</span></td>
-                        <td>
-                            <button class="boton-tabla">Editar</button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="tabla-plataformas"></tbody>
             </table>
         </section>
 
     </main>
-
+    <script src="../js/plataformas.js"></script>
 </body>
 
 </html>
