@@ -1,13 +1,20 @@
 import { Router } from 'express';
-import { actualizarNave, agregarNave, eliminarNave, obtenerTodasNaves, obtenerUnaNave } from '../db/nave.js';
+import { actualizarNave, agregarNave, eliminarNave, obtenerTodasNaves, obtenerUnaNave, obtenerCantidadNaves } from '../db/nave.js';
 
 export const endpointsNave = Router();
+
+// Para obtener la cantidad de naves
+endpointsNave.get("/count", async (req, res) => {
+    const cantidad = await obtenerCantidadNaves();
+    res.json({ total: cantidad });
+})
 
 // Para obtener todas las naves
 endpointsNave.get("/", async (req, res) => {
     const naves = await obtenerTodasNaves();
     res.json(naves);
 }) 
+
 
 // Para obtener una sola nave
 endpointsNave.get("/:id", async (req, res) => {
