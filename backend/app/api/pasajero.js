@@ -18,6 +18,9 @@ endpointsPasajero.get("/:id", async (req, res) => {
 
 // Para agregar un pasajero
 endpointsPasajero.post("/", async (req, res) => {
+
+    console.log(req.body);
+
     const pasajero = await agregarPasajero(
         req.body.documento,
         req.body.nombre,
@@ -26,9 +29,11 @@ endpointsPasajero.post("/", async (req, res) => {
         req.body.telefono,
         req.body.salud,
         req.body.direccion
-    );;
-    res.status(201).json({message: "Pasajero agregado."});
-}) 
+    );
+
+    res.status(201).json({ message: "Pasajero agregado." });
+
+});
 
 // Para eliminar un pasajero
 endpointsPasajero.delete("/", async (req, res) => {
