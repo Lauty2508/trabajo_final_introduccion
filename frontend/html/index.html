@@ -8,10 +8,12 @@
     <title>GlobAL</title>
 
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="./js/index.js"></script>
+    <script>obtenerCantidadNaves();</script>
 </head>
 
 <body>
-
+    
     <header>
         <a href="index.html" class="logo">
         <img src="../assets/logo.png" alt="GlobAL Space Travel Company">
@@ -55,7 +57,7 @@
         <section class="panel-estados">
 
             <article class="tarjeta">
-                <p class="numero">12</p>
+                <p class="numero" id="naves"></p>
                 <p class="nombre">Naves registradas</p>
             </article>
 
@@ -132,7 +134,6 @@
 
 </section>
     </main>
-
 </body>
 
 </html>

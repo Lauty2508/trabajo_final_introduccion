@@ -5,16 +5,18 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./frontend:/app
+      - ./frontend/html:/app
     command: npx http-server -p 8080 --cors
     
   backend:
       image: node:22
       working_dir: /app
       environment:
-        - DB_HOST=db
-        - DB_NAME=db_intro
-        - DB_PASS=123
+        DB_HOST: db
+        DB_NAME: db_intro
+        DB_USER: postgres
+        DB_PASS: 123
+        DB_PORT: 5432
       ports: 
         - "3000:3000"
       volumes:
@@ -32,4 +34,5 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./backend/app/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./data:/var/lib/postgresql/data
+      - ./backend/app/db/init:/docker-entrypoint-initdb.d

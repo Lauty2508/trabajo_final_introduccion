@@ -1,8 +1,16 @@
 import { db } from './pool.js';
 
+// Para obtener la cantidad de naves 
+export async function obtenerCantidadNaves(){
+    const query = await db.query('SELECT COUNT(*) FROM nave');
+    const totalRegistros = parseInt(query.rows[0].count, 10);
+    return totalRegistros;
+}
+
+
 // Para obtener todas las naves
 export async function obtenerTodasNaves(){
-    const query = "SELECT * FROM nave;";
+    const query = "SELECT * FROM nave ORDER BY Nave_id ASC;";
     const res = await db.query(query);
     return res.rows;
 }
