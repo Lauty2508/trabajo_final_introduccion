@@ -11,9 +11,15 @@ function crearFilaNave(nave) {
             </td>
             <td>
                 <button
-                    class="boton-tabla"
+                    class="boton-tabla editar"
                     data-id="${nave.nave_id}">
                     Editar
+                </button>
+
+                <button
+                    class="boton-tabla eliminar"
+                    data-id="${nave.nave_id}">
+                    Eliminar
                 </button>
             </td>
         </tr>
@@ -63,19 +69,45 @@ obtenerNaves();
 const botonNuevaNave = document.getElementById("btn-nueva-nave");
 const formulario = document.getElementById("formulario-nave");
 const formNave = document.getElementById("form-nave");
+const botonCancelar = document.getElementById("btn-cancelar");
+let naveEditando = null;
+
+function abrirFormulario() {
+    if (naveEditando === null) {
+    formNave.reset();
+    }
+    formulario.classList.add("activo");
+
+    botonNuevaNave.textContent = "Cancelar";
+
+}
+
+function cerrarFormulario() {
+
+    formulario.classList.remove("activo");
+
+    botonNuevaNave.textContent = "+ Nueva Nave";
+
+    formNave.reset();
+
+}
 
 
 botonNuevaNave.addEventListener("click", () => {
 
-    if (formulario.style.display === "none") {
+    if (formulario.classList.contains("activo")) {
 
-        formulario.style.display = "block";
-        botonNuevaNave.textContent = "Cancelar";
+        cerrarFormulario();
+
+        naveEditando = null;
 
     } else {
 
-        formulario.style.display = "none";
-        botonNuevaNave.textContent = "+ Nueva Nave";
+        naveEditando = null;
+
+        document.getElementById("titulo-formulario").textContent = "Nueva Nave";
+
+        abrirFormulario();
 
     }
 
@@ -93,24 +125,27 @@ formNave.addEventListener("submit", async (event) => {
         capacidad: document.getElementById("capacidad").value,
         estado: document.getElementById("estado").value
     };
+    const url = naveEditando
+        ? `http://localhost:3000/api/v1/nave/${naveEditando}`
+        : "http://localhost:3000/api/v1/nave";
 
-    const respuesta = await fetch("http://localhost:3000/api/v1/nave", {
-        method: "POST",
+    const metodo = naveEditando ? "PUT" : "POST";
+
+    const respuesta = await fetch(url, {
+        method: metodo,
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(nuevaNave)
     });
 
-    const resultado = await respuesta.json();
+const resultado = await respuesta.json();
+
 
     console.log(resultado);
 
-    formNave.reset();
-
-    formulario.style.display = "none";
-
-    botonNuevaNave.textContent = "+ Nueva Nave";
+    cerrarFormulario();
+    naveEditando = null;
 
     await obtenerNaves();
 
@@ -118,26 +153,69 @@ formNave.addEventListener("submit", async (event) => {
 
 document.addEventListener("click", async (event) => {
 
-    if (!event.target.classList.contains("boton-tabla")) {
+    if (event.target.classList.contains("editar")) {
+
+        const id = event.target.dataset.id;
+
+        const respuesta = await fetch(`http://localhost:3000/api/v1/nave/${id}`);
+
+        const nave = await respuesta.json();
+
+        naveEditando = nave.nave_id;
+
+        document.getElementById("titulo-formulario").textContent = "Editar Nave";
+
+        document.getElementById("modelo").value = nave.modelo;
+        document.getElementById("tiempo").value = nave.tiempo_de_uso;
+        document.getElementById("anio").value = nave.anio_fabricacion;
+        document.getElementById("kilometraje").value = nave.kilometraje_recorrido;
+        document.getElementById("capacidad").value = nave.capacidad_max_pasajeros;
+        document.getElementById("estado").value = nave.estado;
+
+        abrirFormulario();
+
+    }
+
+});
+
+document.addEventListener("click", async (event) => {
+
+    if (!event.target.classList.contains("eliminar")) {
+        return;
+    }
+
+    const confirmar = confirm("¿Deseas eliminar esta nave?");
+
+    if (!confirmar) {
         return;
     }
 
     const id = event.target.dataset.id;
 
-    const respuesta = await fetch(`http://localhost:3000/api/v1/nave/${id}`);
+    const respuesta = await fetch("http://localhost:3000/api/v1/nave", {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            id: id
+        })
+    });
 
-    const nave = await respuesta.json();
-    document.getElementById("modelo").value = nave.modelo;
-    document.getElementById("tiempo").value = nave.tiempo_de_uso;
-    document.getElementById("anio").value = nave.anio_fabricacion;
-    document.getElementById("kilometraje").value = nave.kilometraje_recorrido;
-    document.getElementById("capacidad").value = nave.capacidad_max_pasajeros;
-    document.getElementById("estado").value = nave.estado;
+    const resultado = await respuesta.json();
 
-    formulario.style.display = "block";
+    console.log(resultado);
 
-    botonNuevaNave.textContent = "Cancelar";
+    await obtenerNaves();
 
-    console.log(nave);
+});
+
+botonCancelar.addEventListener("click", () => {
+
+    cerrarFormulario();
+
+    naveEditando = null;
+
+    document.getElementById("titulo-formulario").textContent = "Nueva Nave";
 
 });
