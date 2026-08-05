@@ -1,41 +1,33 @@
 function crearFilaViaje(viaje) {
+    const origen = viaje.plataforma_origen_nombre;
+    const destino = viaje.plataforma_destino_nombre;
+    const nave = viaje.nave_nombre;
 
     return `
         <tr>
-
             <td>${viaje.viaje_id}</td>
-
-            <td>${viaje.plataforma_origen_id} → ${viaje.plataforma_destino_id}</td>
-
-            <td>${viaje.naves_id}</td>
-
+            <td>${origen} → ${destino}</td>
+            <td>${nave}</td>
             <td>${viaje.fecha_despegue} ${viaje.horario_salida}</td>
-
             <td>
                 <span class="estado ${obtenerClaseEstado(viaje.estado_despegues)}">
                     ${viaje.estado_despegues}
                 </span>
             </td>
-
             <td>
-
                 <button
                     class="boton-tabla editar"
                     data-id="${viaje.viaje_id}">
                     Editar
                 </button>
-
                 <button
                     class="boton-tabla eliminar"
                     data-id="${viaje.viaje_id}">
                     Eliminar
                 </button>
-
             </td>
-
         </tr>
     `;
-
 }
 
 function obtenerClaseEstado(estado) {
@@ -202,7 +194,9 @@ document.addEventListener("click", async (event) => {
         document.getElementById("titulo-formulario").textContent =
             "Editar Viaje";
 
-        document.getElementById("fecha").value = viaje.fecha_despegue;
+        const fechaLimpia = viaje.fecha_despegue.split("T")[0];
+
+        document.getElementById("fecha").value = fechaLimpia;
         document.getElementById("horario").value = viaje.horario_salida;
         document.getElementById("duracion").value = viaje.duracion;
         document.getElementById("estado").value = viaje.estado_despegues;

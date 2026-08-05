@@ -674,6 +674,10 @@ tbody tr:hover {
     border-color: var(--color-naranja);
 }
 
+#fecha, #horario {
+  color-scheme: dark;
+}
+
 .botones-formulario {
 
     display: flex;
