@@ -44,12 +44,12 @@ function obtenerClaseEstado(estado) {
         return "disponible-texto";
     }
 
-    if (estado === "Finalizado") {
+    if (estado === "Preparación") {
         return "mantenimiento-texto";
     }
 
-    if (estado === "Cancelado") {
-        return "activo-texto";
+    if (estado === "Autorizado") {
+        return "autorizado-texto";
     }
 
     return "";
