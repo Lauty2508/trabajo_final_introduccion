@@ -601,7 +601,8 @@ tbody tr:hover {
 #form-nave,
 #form-pasajero,
 #form-plataforma,
-#form-viaje {
+#form-viaje,
+#form-reserva {
 
     width: 600px;
 
@@ -629,7 +630,8 @@ tbody tr:hover {
 #form-nave h3,
 #form-pasajero h3, 
 #form-plataforma h3,
-#form-viaje h3 {
+#form-viaje h3,
+#form-reserva h3{
 
     color: var(--texto-principal);
 
@@ -645,7 +647,9 @@ tbody tr:hover {
 #form-plataforma input,
 #form-plataforma select,
 #form-viaje input,
-#form-viaje select {
+#form-viaje select,
+#form-reserva input,
+#form-reserva select {
 
     padding: 12px;
 
@@ -667,7 +671,9 @@ tbody tr:hover {
 #form-plataforma input:focus,
 #form-plataforma select:focus,
 #form-viaje input:focus,
-#form-viaje select:focus {
+#form-viaje select:focus,
+#form-reserva input:focus,
+#form-reserva select:focus {
 
     outline: none;
 

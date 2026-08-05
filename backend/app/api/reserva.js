@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { actualizarReserva, agregarReserva, eliminarReserva, obtenerTodasReservas } from '../db/reserva.js';
+import { actualizarReserva, agregarReserva, eliminarReserva, obtenerTodasReservas, obtenerUnaReserva } from '../db/reserva.js';
 
 export const endpointsReserva = Router();
 
@@ -8,6 +8,17 @@ endpointsReserva.get("/", async (req, res) => {
     const reservas = await obtenerTodasReservas();
     res.json(reservas);
 }) 
+
+// Para obtener una sola reserva
+endpointsReserva.get("/:id", async (req, res) => {
+
+    const id = req.params.id;
+
+    const reserva = await obtenerUnaReserva(id);
+
+    res.json(reserva);
+
+});
 
 // Para agregar una reserva
 endpointsReserva.post("/", async (req, res) => {
