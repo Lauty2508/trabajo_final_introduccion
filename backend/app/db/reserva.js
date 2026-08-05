@@ -2,7 +2,7 @@ import { db } from './pool.js';
 
 // Para obtener todas las reservas
 export async function obtenerTodasReservas(){
-    const query = "SELECT * FROM reserva;";
+    const query = "SELECT * FROM reserva ORDER BY Reserva_id ASC;";
     const res = await db.query(query);
     return res.rows;
 }

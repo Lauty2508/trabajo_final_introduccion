@@ -66,7 +66,7 @@ async function obtenerPlataformas() {
         const respuesta = await fetch("http://localhost:3000/api/v1/plataforma");
 
         const datos = await respuesta.json();
-
+        
         const tabla = document.getElementById("tabla-plataformas");
 
         let filas = "";

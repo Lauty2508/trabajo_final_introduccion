@@ -106,6 +106,8 @@ botonNuevoPasajero.addEventListener("click", () => {
 formPasajero.addEventListener("submit", async (event) => {
 
     event.preventDefault();
+    
+    const estado = document.getElementById("estado-de-salud").value === "true";
 
     const nuevoPasajero = {
 
@@ -114,7 +116,7 @@ formPasajero.addEventListener("submit", async (event) => {
         apellido: document.getElementById("apellido").value,
         edad: document.getElementById("edad").value,
         telefono: document.getElementById("telefono").value,
-        salud: document.getElementById("salud").value,
+        salud: estado,
         direccion: document.getElementById("direccion").value
 
     };
@@ -170,7 +172,7 @@ document.addEventListener("click", async (event) => {
     document.getElementById("apellido").value = pasajero.apellido;
     document.getElementById("edad").value = pasajero.edad;
     document.getElementById("telefono").value = pasajero.telefono;
-    document.getElementById("salud").value = pasajero.estado_salud;
+    document.getElementById("estado-de-salud").value = String(pasajero.estado_salud ?? pasajero.salud);
     document.getElementById("direccion").value = pasajero.direccion;
 
     abrirFormulario();

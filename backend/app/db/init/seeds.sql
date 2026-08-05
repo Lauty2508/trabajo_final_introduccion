@@ -223,6 +223,8 @@ VALUES('Horizon Y', 15, 2026, 5000, 400, 'Operativa');
 
 
 
+
+
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('25333444', 'Laura', 'Martinez', 35, '+541155557777', true, 'Calle Falsa 123');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('40999888', 'Julian', 'Alvarez', 24, '+541155558888', false, 'Av. Libertador 5500');
@@ -340,226 +342,170 @@ INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estad
 
 
 
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Argentina', -34.603700, -58.381600, 5, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Argentina', -34.603700, -58.381600, 5, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Estados Unidos', 28.392200, -80.607700, 12, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Estados Unidos', 28.392200, -80.607700, 12, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Japon', 30.400000, 130.970000, 8, 'En mantenimiento');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Japon', 30.400000, 130.970000, 8, 'Mantenimiento preventivo');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Brasil', -15.793800, -47.882700, 6, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Brasil', -15.793800, -47.882700, 6, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Francia', 48.856600, 2.352200, 10, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Francia', 48.856600, 2.352200, 10, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('China', 39.904200, 116.407400, 20, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('China', 39.904200, 116.407400, 20, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Australia', -35.280900, 149.130000, 8, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Australia', -35.280900, 149.130000, 8, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('España', 40.416700, -3.703200, 5, 'En mantenimiento');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('España', 40.416700, -3.703200, 5, 'Mantenimiento preventivo');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Canada', 45.421500, -75.697100, 7, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Canada', 45.421500, -75.697100, 7, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('India', 28.613900, 77.209000, 15, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('India', 28.613900, 77.209000, 15, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Mexico', 19.432600, -99.133200, 12, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Mexico', 19.432600, -99.133200, 12, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Reino Unido', 51.507400, -0.127800, 8, 'En mantenimiento');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Reino Unido', 51.507400, -0.127800, 8, 'Mantenimiento preventivo');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Sudafrica', -33.924900, 18.424100, 5, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Sudafrica', -33.924900, 18.424100, 5, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Emiratos Arabes', 25.204800, 55.270800, 25, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Emiratos Arabes', 25.204800, 55.270800, 25, 'Activa');
-
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Rusia', 55.755800, 37.617300, 10, 'Fuera de servicio');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Chile', -33.448900, -70.669300, 4, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Chile', -33.448900, -70.669300, 4, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Italia', 41.902800, 12.496400, 6, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Italia', 41.902800, 12.496400, 6, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Egipto', 30.044400, 31.235700, 3, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Egipto', 30.044400, 31.235700, 3, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Alemania', 52.520000, 13.405000, 15, 'Mantenimiento preventivo');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Alemania', 52.520000, 13.405000, 15, 'En mantenimiento');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Corea del Sur', 37.566500, 126.978000, 12, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Corea del Sur', 37.566500, 126.978000, 12, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Peru', -12.046400, -77.042800, 8, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Peru', -12.046400, -77.042800, 8, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Colombia', 4.711000, -74.072100, 10, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Colombia', 4.711000, -74.072100, 10, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Uruguay', -34.901100, -56.164500, 5, 'Mantenimiento preventivo');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Uruguay', -34.901100, -56.164500, 5, 'En mantenimiento');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Bolivia', -16.500000, -68.119300, 3, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Bolivia', -16.500000, -68.119300, 3, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Paraguay', -25.263700, -57.575900, 4, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Paraguay', -25.263700, -57.575900, 4, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Venezuela', 10.480600, -66.903600, 6, 'Fuera de servicio');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Ecuador', -0.180700, -78.467800, 7, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Ecuador', -0.180700, -78.467800, 7, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Noruega', 59.913900, 10.752200, 12, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Noruega', 59.913900, 10.752200, 12, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Suecia', 59.329300, 18.068600, 15, 'Mantenimiento preventivo');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Suecia', 59.329300, 18.068600, 15, 'En mantenimiento');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Finlandia', 60.169500, 24.935500, 9, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Finlandia', 60.169500, 24.935500, 9, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Grecia', 37.983800, 23.727500, 8, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Grecia', 37.983800, 23.727500, 8, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Turquia', 39.920800, 32.854100, 14, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Turquia', 39.920800, 32.854100, 14, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Nueva Zelanda', -41.286500, 174.776200, 11, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Nueva Zelanda', -41.286500, 174.776200, 11, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Singapur', 1.352100, 103.819800, 20, 'Mantenimiento preventivo');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Singapur', 1.352100, 103.819800, 20, 'En mantenimiento');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Tailandia', 13.756300, 100.501800, 16, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Tailandia', 13.756300, 100.501800, 16, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Marruecos', 34.020900, -6.841600, 5, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Marruecos', 34.020900, -6.841600, 5, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Kenia', -1.292100, 36.821900, 7, 'Fuera de servicio');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Nigeria', 9.082000, 8.675300, 10, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Nigeria', 9.082000, 8.675300, 10, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Sudan', 15.500700, 32.559900, 3, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Sudan', 15.500700, 32.559900, 3, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Angola', -8.839000, 13.289400, 4, 'Mantenimiento preventivo');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Angola', -8.839000, 13.289400, 4, 'En mantenimiento');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Portugal', 38.722300, -9.139300, 9, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Portugal', 38.722300, -9.139300, 9, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Irlanda', 53.349800, -6.260300, 6, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Irlanda', 53.349800, -6.260300, 6, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Polonia', 52.229700, 21.012200, 13, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Polonia', 52.229700, 21.012200, 13, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Ucrania', 50.450100, 30.523400, 11, 'Fuera de servicio');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Suiza', 46.948000, 7.447400, 5, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Suiza', 46.948000, 7.447400, 5, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Austria', 48.208200, 16.373800, 8, 'Mantenimiento preventivo');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Austria', 48.208200, 16.373800, 8, 'En mantenimiento');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Belgica', 50.850300, 4.351700, 10, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Belgica', 50.850300, 4.351700, 10, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Holanda', 52.367600, 4.904100, 14, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Holanda', 52.367600, 4.904100, 14, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Dinamarca', 55.676100, 12.568300, 9, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Dinamarca', 55.676100, 12.568300, 9, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Islandia', 64.146600, -21.942600, 4, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Islandia', 64.146600, -21.942600, 4, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Cuba', 23.113600, -82.366600, 5, 'Fuera de servicio');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Jamaica', 18.017900, -76.809900, 3, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Jamaica', 18.017900, -76.809900, 3, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Costa Rica', 9.928100, -84.090700, 6, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Costa Rica', 9.928100, -84.090700, 6, 'Operativa');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Panama', 8.982400, -79.519900, 15, 'Mantenimiento preventivo');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Panama', 8.982400, -79.519900, 15, 'En mantenimiento');
 
-INSERT INTO public.plataforma
-(pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Puerto Rico', 18.465500, -66.105700, 8, 'Activa');
+INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
+VALUES('Puerto Rico', 18.465500, -66.105700, 8, 'Operativa');
 
 
 
