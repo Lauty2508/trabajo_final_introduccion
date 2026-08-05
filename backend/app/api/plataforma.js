@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { actualizarPlataforma, agregarPlataforma, eliminarPlataforma, obtenerTodasPlataformas, obtenerUnaPlataforma, obtenerCantidadPlataformas } from '../db/plataforma.js';
+import { actualizarPlataforma, agregarPlataforma, eliminarPlataforma, obtenerCantidadPlataformas, obtenerTodasPlataformas, obtenerUnaPlataforma } from '../db/plataforma.js';
 
 export const endpointsPlataforma = Router();
 

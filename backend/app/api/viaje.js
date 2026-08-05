@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { actualizarViaje, agregarViaje, eliminarViaje, obtenerTodosViajes, obtenerCantidadViajes } from '../db/viaje.js';
+import { actualizarViaje, agregarViaje, eliminarViaje, obtenerCantidadViajes, obtenerTodosViajes } from '../db/viaje.js';
 
 export const endpointsViaje = Router();
 
