@@ -680,7 +680,7 @@ tbody tr:hover {
     border-color: var(--color-naranja);
 }
 
-#fecha, #horario {
+#fecha, #horario, #fecha_reserva {
   color-scheme: dark;
 }
 
