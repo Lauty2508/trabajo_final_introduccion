@@ -7,6 +7,17 @@ export async function obtenerTodasReservas(){
     return res.rows;
 }
 
+// Para obtener una sola reserva
+export async function obtenerUnaReserva(id){
+
+    const query = "SELECT * FROM reserva WHERE Reserva_id = $1;";
+
+    const res = await db.query(query, [id]);
+
+    return res.rows[0];
+
+}
+
 // Para agregar una reserva
 export async function agregarReserva(asiento, fecha, precio, vuelo, pasajero){
     const query = "INSERT INTO reserva (Codigo_asiento, Fecha_reserva, Precio_pasaje, Vuelo_id, Pasajero_id) VALUES ($1, $2, $3, $4, $5);";
