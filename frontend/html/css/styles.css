@@ -594,9 +594,16 @@ tbody tr:hover {
     display: flex;
 }
 
-#form-nave {
+#form-nave,
+#form-pasajero,
+#form-plataforma,
+#form-viaje {
 
-    width: 500px;
+    width: 600px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
 
     background: var(--fondo-secundario);
 
@@ -615,15 +622,26 @@ tbody tr:hover {
     box-shadow: 0 20px 40px rgba(0,0,0,.4);
 }
 
-#form-nave h3 {
+#form-nave h3,
+#form-pasajero h3, 
+#form-plataforma h3,
+#form-viaje h3 {
 
     color: var(--texto-principal);
 
     margin-bottom: 10px;
+
+    text-align: center;
 }
 
 #form-nave input,
-#form-nave select {
+#form-nave select,
+#form-pasajero input,
+#form-pasajero select,
+#form-plataforma input,
+#form-plataforma select,
+#form-viaje input,
+#form-viaje select {
 
     padding: 12px;
 
@@ -639,20 +657,26 @@ tbody tr:hover {
 }
 
 #form-nave input:focus,
-#form-nave select:focus {
+#form-nave select:focus,
+#form-pasajero input:focus,
+#form-pasajero select:focus 
+#form-plataforma input:focus,
+#form-plataforma select:focus,
+#form-viaje input:focus,
+#form-viaje select:focus {
 
     outline: none;
 
     border-color: var(--color-naranja);
 }
-.botones-formulario{
 
-    display:flex;
+.botones-formulario {
 
-    justify-content:flex-end;
+    display: flex;
 
-    gap:12px;
+    justify-content: flex-end;
 
-    margin-top:10px;
+    gap: 12px;
 
+    margin-top: 10px;
 }
