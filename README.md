@@ -2,7 +2,7 @@
 <img width="1380" height="752" alt="logo proyecto" src="https://github.com/user-attachments/assets/9f1a53b1-e113-4282-bf5c-77a1c412e8e7" />
 
 # 🚀 Sistema de Gestión de Vuelos Espaciales Suborbitales
-La idea de este proyecto es desarrollar una pagina web en la que se gestionen vuelos espaciales suborbitales en la que se administren naves, pasajeros, plataformas y reservas para coordinar viajes en menos de 90 minutos. La API implementa reglas de negocio para asegurar que tanto la nave, como la plataforma como el pasajero se encuentren en condiciones óptimas antes de autorizar cualquier despegue.
+La idea de este proyecto es desarrollar una pagina web en la que se gestionen vuelos espaciales suborbitales en la que se administren naves, pasajeros, plataformas y reservas para coordinar viajes en menos de 90 minutos. La API implementa reglas de negocio para asegurar que tanto la nave, como la plataforma y el pasajero se encuentren en condiciones óptimas antes de autorizar cualquier despegue.
 
 ## 📁 Acceso al proyecto
 Para obtener el código fuente en la computadora abrí tu terminal y clona este repositorio usando Git: 
