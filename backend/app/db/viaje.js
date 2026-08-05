@@ -1,8 +1,16 @@
 import { db } from './pool.js';
 
+// Para obtener la cantidad de viajes
+export async function obtenerCantidadViajes(){
+    const query = await db.query('SELECT COUNT(*) FROM viaje');
+    const totalRegistros = parseInt(query.rows[0].count, 10);
+    return totalRegistros;
+}
+
+
 // Para obtener todos los viajes
 export async function obtenerTodosViajes(){
-    const query = "SELECT * FROM viaje;";
+    const query = "SELECT * FROM viaje ORDER BY Viaje_id ASC;";
     const res = await db.query(query);
     return res.rows;
 }

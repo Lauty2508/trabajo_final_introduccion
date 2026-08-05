@@ -15,8 +15,8 @@ function crearFilaPlataforma(plataforma) {
             <td>${plataforma.capacidad_max_naves}</td>
 
             <td>
-                <span class="estado ${obtenerClaseEstado(plataforma.estado)}">
-                    ${plataforma.estado}
+                <span class="estado ${obtenerClaseEstado(plataforma.estado_plataforma)}">
+                    ${plataforma.estado_plataforma}
                 </span>
             </td>
 
@@ -66,7 +66,7 @@ async function obtenerPlataformas() {
         const respuesta = await fetch("http://localhost:3000/api/v1/plataforma");
 
         const datos = await respuesta.json();
-
+        
         const tabla = document.getElementById("tabla-plataformas");
 
         let filas = "";
@@ -211,7 +211,7 @@ document.addEventListener("click", async (event) => {
         document.getElementById("latitud").value = plataforma.latitud;
         document.getElementById("longitud").value = plataforma.longitud;
         document.getElementById("capacidad").value = plataforma.capacidad_max_naves;
-        document.getElementById("estado").value = plataforma.estado;
+        document.getElementById("estado").value = plataforma.estado_plataforma;
 
         abrirFormulario();
 
