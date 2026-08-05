@@ -1,5 +1,5 @@
 function crearFilaPlataforma(plataforma) {
-
+console.log(plataforma.estado_plataforma);
     return `
         <tr>
 
@@ -15,8 +15,8 @@ function crearFilaPlataforma(plataforma) {
             <td>${plataforma.capacidad_max_naves}</td>
 
             <td>
-                <span class="estado ${obtenerClaseEstado(plataforma.estado)}">
-                    ${plataforma.estado}
+                <span class="estado ${obtenerClaseEstado(plataforma.estado_plataforma)}">
+                    ${plataforma.estado_plataforma}
                 </span>
             </td>
 
@@ -72,7 +72,8 @@ async function obtenerPlataformas() {
         let filas = "";
 
         datos.forEach(plataforma => {
-
+            
+            console.log(plataforma);
             filas += crearFilaPlataforma(plataforma);
 
         });
@@ -211,7 +212,7 @@ document.addEventListener("click", async (event) => {
         document.getElementById("latitud").value = plataforma.latitud;
         document.getElementById("longitud").value = plataforma.longitud;
         document.getElementById("capacidad").value = plataforma.capacidad_max_naves;
-        document.getElementById("estado").value = plataforma.estado;
+        document.getElementById("estado").value = plataforma.estado_plataforma;
 
         abrirFormulario();
 

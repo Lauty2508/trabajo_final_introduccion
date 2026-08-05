@@ -33,7 +33,84 @@
                 <h2>Viajes Suborbitales</h2>
             </div>
 
-            <button class="boton-principal">+ Programar Viaje</button>
+            <button id="btn-nuevo-viaje"class="boton-principal">+ Programar Viaje</button>
+        </section>
+        
+        <section id="formulario-viaje" class="formulario-contenedor">
+
+            <form id="form-viaje">
+
+                <h3 id="titulo-formulario">
+                    Nuevo Viaje
+                </h3>
+
+                <input
+                    type="date"
+                    id="fecha"
+                    required>
+
+                <input
+                    type="time"
+                    id="horario"
+                    required>
+
+                <input
+                    type="number"
+                    id="duracion"
+                    placeholder="Duración (minutos)"
+                    required>
+
+                <select id="estado">
+
+                    <option value="Programado">Programado</option>
+
+                    <option value="Preparación">Preparación</option>
+
+                    <option value="Autorizado">Autorizado</option>
+
+                </select>
+
+                <input
+                    type="number"
+                    id="plataforma_origen"
+                    placeholder="ID Plataforma origen"
+                    required>
+
+                <input
+                    type="number"
+                    id="plataforma_destino"
+                    placeholder="ID Plataforma destino"
+                    required>
+
+                <input
+                    type="number"
+                    id="nave"
+                    placeholder="ID Nave"
+                    required>
+
+                <div class="botones-formulario">
+
+                    <button
+                        type="button"
+                        id="btn-cancelar"
+                        class="boton-tabla">
+
+                        Cancelar
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="boton-principal">
+
+                        Guardar
+
+                    </button>
+
+                </div>
+
+            </form>
+
         </section>
 
         <section class="tabla-contenedor">
@@ -48,43 +125,12 @@
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>GL-204</strong></td>
-                        <td>Córdoba → Tokio</td>
-                        <td>Astraea I</td>
-                        <td>15/10/2026 - 14:00 hs</td>
-                        <td><span class="estado disponible-texto">PROGRAMADO</span></td>
-                        <td>
-                            <button class="boton-tabla">Editar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>GL-118</strong></td>
-                        <td>Buenos Aires → París</td>
-                        <td>Hyperion X</td>
-                        <td>18/10/2026 - 09:30 hs</td>
-                        <td><span class="estado mantenimiento-texto">PREPARACIÓN</span></td>
-                        <td>
-                            <button class="boton-tabla">Editar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>GL-309</strong></td>
-                        <td>Córdoba → Sídney</td>
-                        <td>Astraea I</td>
-                        <td>22/10/2026 - 21:15 hs</td>
-                        <td><span class="estado activo-texto">AUTORIZADO</span></td>
-                        <td>
-                            <button class="boton-tabla">Editar</button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="tabla-viajes"></tbody>
             </table>
         </section>
 
     </main>
-
+    <script src="../js/viajes.js"></script>
 </body>
 
 </html>
