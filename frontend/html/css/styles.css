@@ -290,7 +290,11 @@ header h1 span {
 
     white-space: nowrap;
 }
+.autorizado-texto {
+    color: #41df90;
 
+    background-color: rgba(68, 208, 138, 0.29);
+}
 .disponible-texto {
     color: #35c27b;
 
@@ -674,6 +678,10 @@ tbody tr:hover {
     outline: none;
 
     border-color: var(--color-naranja);
+}
+
+#fecha, #horario, #fecha_reserva {
+  color-scheme: dark;
 }
 
 .botones-formulario {

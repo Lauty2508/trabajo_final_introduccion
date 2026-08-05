@@ -519,7 +519,7 @@ VALUES('2026-08-15', '08:00:00', 48, 'Programado', 1, 2, 1);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-09-10', '14:30:00', 72, 'Atrasado', 2, 3, 3);
+VALUES('2026-09-10', '14:30:00', 72, 'Autorizado', 2, 3, 3);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -527,7 +527,7 @@ VALUES('2026-10-01', '06:15:00', 120, 'Programado', 3, 1, 1);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-11-05', '09:00:00', 24, 'Programado', 4, 1, 4);
+VALUES('2026-11-05', '09:00:00', 24, 'Preparación', 4, 1, 4);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -535,11 +535,11 @@ VALUES('2026-12-20', '18:45:00', 80, 'Programado', 5, 2, 7);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-07-01', '10:00:00', 48, 'Finalizado', 6, 10, 9);
+VALUES('2026-07-01', '10:00:00', 48, 'Autorizado', 6, 10, 9);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-07-15', '22:30:00', 110, 'Finalizado', 10, 7, 6);
+VALUES('2026-07-15', '22:30:00', 110, 'Autorizado', 10, 7, 6);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -547,11 +547,11 @@ VALUES('2027-01-10', '05:00:00', 72, 'Programado', 7, 9, 4);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-08-05', '13:15:00', 36, 'Cancelado', 8, 5, 10);
+VALUES('2026-08-05', '13:15:00', 36, 'Preparación', 8, 5, 10);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-09-25', '16:00:00', 90, 'Atrasado', 9, 4, 7);
+VALUES('2026-09-25', '16:00:00', 90, 'Autorizado', 9, 4, 7);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -563,7 +563,7 @@ VALUES('2027-03-01', '11:00:00', 45, 'Programado', 2, 5, 4);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-08-20', '20:00:00', 60, 'En vuelo', 4, 7, 6);
+VALUES('2026-08-20', '20:00:00', 60, 'Preparación', 4, 7, 6);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -579,11 +579,11 @@ VALUES('2026-11-10', '09:00:00', 45, 'Programado', 11, 12, 11);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-11-12', '14:30:00', 30, 'Atrasado', 13, 14, 12);
+VALUES('2026-11-12', '14:30:00', 30, 'Autorizado', 13, 14, 12);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-11-15', '18:00:00', 60, 'Cancelado', 15, 16, 13);
+VALUES('2026-11-15', '18:00:00', 60, 'Preparación', 15, 16, 13);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -591,11 +591,11 @@ VALUES('2026-12-01', '06:15:00', 20, 'Programado', 17, 18, 16);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-12-05', '22:00:00', 80, 'Atrasado', 19, 20, 18);
+VALUES('2026-12-05', '22:00:00', 80, 'Autorizado', 19, 20, 18);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-12-10', '11:45:00', 90, 'Cancelado', 1, 11, 14);
+VALUES('2026-12-10', '11:45:00', 90, 'Preparación', 1, 11, 14);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -603,19 +603,19 @@ VALUES('2027-01-15', '08:30:00', 120, 'Programado', 3, 12, 20);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-07-26', '15:00:00', 50, 'En vuelo', 14, 7, 11);
+VALUES('2026-07-26', '15:00:00', 50, 'Preparación', 14, 7, 11);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-08-10', '07:00:00', 40, 'Atrasado', 16, 9, 16);
+VALUES('2026-08-10', '07:00:00', 40, 'Autorizado', 16, 9, 16);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-08-20', '19:30:00', 110, 'Cancelado', 4, 15, 15);
+VALUES('2026-08-20', '19:30:00', 110, 'Preparación', 4, 15, 15);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-09-05', '10:15:00', 15, 'Atrasado', 8, 17, 12);
+VALUES('2026-09-05', '10:15:00', 15, 'Autorizado', 8, 17, 12);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -627,11 +627,11 @@ VALUES('2026-10-01', '16:45:00', 100, 'Programado', 20, 1, 20);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-05-10', '05:30:00', 25, 'Finalizado', 18, 5, 16);
+VALUES('2026-05-10', '05:30:00', 25, 'Autorizado', 18, 5, 16);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-10-20', '21:00:00', 95, 'Atrasado', 12, 3, 11);
+VALUES('2026-10-20', '21:00:00', 95, 'Autorizado', 12, 3, 11);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -639,11 +639,11 @@ VALUES('2026-11-20', '08:00:00', 45, 'Programado', 21, 28, 21);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-11-22', '12:30:00', 60, 'Cancelado', 26, 30, 23);
+VALUES('2026-11-22', '12:30:00', 60, 'Preparación', 26, 30, 23);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-05-15', '16:00:00', 120, 'Finalizado', 22, 55, 25);
+VALUES('2026-05-15', '16:00:00', 120, 'Autorizado', 22, 55, 25);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -651,11 +651,11 @@ VALUES('2026-12-01', '04:15:00', 30, 'Programado', 24, 25, 27);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-12-10', '18:45:00', 90, 'Atrasado', 29, 31, 28);
+VALUES('2026-12-10', '18:45:00', 90, 'Autorizado', 29, 31, 28);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-08-05', '09:30:00', 15, 'Cancelado', 33, 34, 32);
+VALUES('2026-08-05', '09:30:00', 15, 'Preparación', 33, 34, 32);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -663,7 +663,7 @@ VALUES('2027-01-20', '14:00:00', 180, 'Programado', 35, 1, 36);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-10-15', '22:10:00', 50, 'Atrasado', 41, 45, 38);
+VALUES('2026-10-15', '22:10:00', 50, 'Autorizado', 41, 45, 38);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -671,11 +671,11 @@ VALUES('2027-02-14', '07:00:00', 72, 'Programado', 48, 50, 41);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-06-30', '11:20:00', 85, 'Finalizado', 52, 53, 43);
+VALUES('2026-06-30', '11:20:00', 85, 'Autorizado', 52, 53, 43);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-09-12', '15:45:00', 40, 'En vuelo', 21, 22, 45);
+VALUES('2026-09-12', '15:45:00', 40, 'Preparación', 21, 22, 45);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -687,11 +687,11 @@ VALUES('2026-12-25', '23:59:00', 200, 'Programado', 15, 26, 51);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-07-10', '10:00:00', 10, 'Cancelado', 44, 51, 50);
+VALUES('2026-07-10', '10:00:00', 10, 'Preparación', 44, 51, 50);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-10-30', '13:15:00', 55, 'Atrasado', 38, 40, 52);
+VALUES('2026-10-30', '13:15:00', 55, 'Autorizado', 38, 40, 52);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -699,7 +699,7 @@ VALUES('2027-03-01', '08:45:00', 110, 'Programado', 55, 21, 53);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-08-25', '17:30:00', 35, 'Finalizado', 36, 39, 54);
+VALUES('2026-08-25', '17:30:00', 35, 'Autorizado', 36, 39, 54);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -711,15 +711,15 @@ VALUES('2027-04-15', '05:00:00', 60, 'Programado', 27, 30, 22);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-11-18', '19:20:00', 80, 'Cancelado', 37, 44, 26);
+VALUES('2026-11-18', '19:20:00', 80, 'Preparación', 37, 44, 26);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-09-01', '12:00:00', 45, 'Atrasado', 32, 42, 29);
+VALUES('2026-09-01', '12:00:00', 45, 'Autorizado', 32, 42, 29);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-10-05', '14:10:00', 20, 'En vuelo', 23, 25, 30);
+VALUES('2026-10-05', '14:10:00', 20, 'Preparación', 23, 25, 30);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -727,7 +727,7 @@ VALUES('2027-05-10', '09:00:00', 140, 'Programado', 10, 48, 31);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-07-20', '16:30:00', 55, 'Cancelado', 19, 29, 39);
+VALUES('2026-07-20', '16:30:00', 55, 'Preparación', 19, 29, 39);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)

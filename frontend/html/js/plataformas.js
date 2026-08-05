@@ -1,5 +1,4 @@
 function crearFilaPlataforma(plataforma) {
-console.log(plataforma.estado_plataforma);
     return `
         <tr>
 
@@ -72,8 +71,7 @@ async function obtenerPlataformas() {
         let filas = "";
 
         datos.forEach(plataforma => {
-            
-            console.log(plataforma);
+
             filas += crearFilaPlataforma(plataforma);
 
         });

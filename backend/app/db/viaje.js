@@ -10,10 +10,36 @@ export async function obtenerCantidadViajes(){
 
 // Para obtener todos los viajes
 export async function obtenerTodosViajes(){
-    const query = "SELECT * FROM viaje ORDER BY Viaje_id ASC;";
+    const query = `
+    SELECT 
+        v.Viaje_id,
+        v.Fecha_despegue,
+        v.Horario_salida,
+        v.Duracion,
+        v.Estado_despegues,
+        v.Plataforma_origen_id,
+        v.Plataforma_destino_id,
+        v.Naves_id,
+        CONCAT(po.Pais, ' (Id - ', po.Plataforma_id, ')') AS plataforma_origen_nombre,
+        CONCAT(pd.Pais, ' (Id - ', pd.Plataforma_id, ')') AS plataforma_destino_nombre,
+        CONCAT(n.Modelo, ' (Id - ', n.Nave_id, ')') AS nave_nombre
+    FROM VIAJE v
+    JOIN PLATAFORMA po ON v.Plataforma_origen_id = po.Plataforma_id
+    JOIN PLATAFORMA pd ON v.Plataforma_destino_id = pd.Plataforma_id
+    JOIN NAVE n ON v.Naves_id = n.Nave_id
+    ORDER BY Viaje_id ASC;`
     const res = await db.query(query);
     return res.rows;
 }
+
+
+// Para obtener solo un viaje
+export async function obtenerUnViaje(id){
+    const query = "SELECT * FROM viaje WHERE Viaje_id = $1;";
+    const res = await db.query(query, [id]);
+    return res.rows[0];
+}
+
 
 // Para agregar un viaje
 export async function agregarViaje(fecha, horario, duracion, estado, plataforma_origen, plataforma_destino, naves){
