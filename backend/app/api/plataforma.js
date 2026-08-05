@@ -1,7 +1,13 @@
 import { Router } from 'express';
-import { actualizarPlataforma, agregarPlataforma, eliminarPlataforma, obtenerTodasPlataformas, obtenerUnaPlataforma } from '../db/plataforma.js';
+import { actualizarPlataforma, agregarPlataforma, eliminarPlataforma, obtenerTodasPlataformas, obtenerUnaPlataforma, obtenerCantidadPlataformas } from '../db/plataforma.js';
 
 export const endpointsPlataforma = Router();
+
+// Para obtener la cantidad de plataformas
+endpointsPlataforma.get("/count", async (req, res) => {
+    const cantidad = await obtenerCantidadPlataformas();
+    res.json({ total: cantidad });
+})
 
 // Para obtener todas las plataformas
 endpointsPlataforma.get("/", async (req, res) => {

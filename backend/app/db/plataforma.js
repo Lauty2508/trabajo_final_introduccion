@@ -1,8 +1,17 @@
 import { db } from './pool.js';
 
+// Para obtener la cantidad de plataformas
+export async function obtenerCantidadPlataformas(){
+    const query = await db.query('SELECT COUNT(*) FROM plataforma');
+    const totalRegistros = parseInt(query.rows[0].count, 10);
+    return totalRegistros;
+}
+
+
+
 // Para obtener todas las plataformas
 export async function obtenerTodasPlataformas(){
-    const query = "SELECT * FROM plataforma;";
+    const query = "SELECT * FROM plataforma ORDER BY Plataforma_id ASC;";
     const res = await db.query(query);
     return res.rows;
 }
