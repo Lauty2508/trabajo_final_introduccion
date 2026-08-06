@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { actualizarViaje, agregarViaje, eliminarViaje, obtenerTodosViajes, obtenerCantidadViajes, obtenerUnViaje, obtenerCantidadViajesPorPlataforma, existeViajeNaveEnHorario } from '../db/viaje.js';
+import { actualizarViaje, agregarViaje, eliminarViaje, obtenerTodosViajes, obtenerCantidadViajes, obtenerUnViaje, obtenerCantidadViajesPorPlataforma, existeViajeNaveEnHorario, obtenerTresViajes } from '../db/viaje.js';
 import { obtenerUnaNave } from '../db/nave.js';
 import { obtenerUnaPlataforma } from '../db/plataforma.js';
 
@@ -10,6 +10,12 @@ endpointsViaje.get("/count", async (req, res) => {
     const cantidad = await obtenerCantidadViajes();
     res.json({ total: cantidad });
 })
+
+// Para obtener todos los viajes
+endpointsViaje.get("/tres", async (req, res) => {
+    const viajes = await obtenerTresViajes();
+    res.json(viajes);
+}) 
 
 // Para obtener todos los viajes
 endpointsViaje.get("/", async (req, res) => {
