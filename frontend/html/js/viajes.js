@@ -169,6 +169,13 @@ formViaje.addEventListener("submit", async (event) => {
 
     const resultado = await respuesta.json();
 
+    if (!respuesta.ok) {
+        alert(resultado.message);
+        return;
+    }
+
+    alert(resultado.message);
+
     console.log(resultado);
 
     cerrarFormulario();

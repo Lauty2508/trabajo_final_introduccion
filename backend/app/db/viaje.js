@@ -84,3 +84,28 @@ export async function eliminarViaje(id){
     const res = await db.query(query, [id]);
     return res.rowCount == 1;
 }
+
+// Para obtener la cantidad de viajes asignados a una plataforma (como origen o destino)
+export async function obtenerCantidadViajesPorPlataforma(plataformaId, viajeIdExcluido = null) {
+    let query = "SELECT COUNT(*) FROM viaje WHERE (Plataforma_origen_id = $1 OR Plataforma_destino_id = $1)";
+    const params = [plataformaId];
+    if (viajeIdExcluido) {
+        query += " AND Viaje_id != $2";
+        params.push(viajeIdExcluido);
+    }
+    const res = await db.query(query, params);
+    return parseInt(res.rows[0].count, 10);
+}
+
+// Para verificar si una nave ya tiene asignado un viaje en la misma fecha y horario
+export async function existeViajeNaveEnHorario(naveId, fecha, horario, viajeIdExcluido = null) {
+    let query = "SELECT COUNT(*) FROM viaje WHERE Naves_id = $1 AND Fecha_despegue = $2 AND Horario_salida = $3";
+    const params = [naveId, fecha, horario];
+    if (viajeIdExcluido) {
+        query += " AND Viaje_id != $4";
+        params.push(viajeIdExcluido);
+    }
+    const res = await db.query(query, params);
+    return parseInt(res.rows[0].count, 10) > 0;
+}
+
