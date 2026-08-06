@@ -148,12 +148,23 @@ formPasajero.addEventListener("submit", async (event) => {
     
     const estado = document.getElementById("estado-de-salud").value === "true";
 
+    const valorDocumento = parseFloat(document.getElementById("documento").value);
+    const valorEdad = parseFloat(document.getElementById("edad").value);
+
+    if (isNaN(valorDocumento) || valorDocumento < 0) {
+        alert("El documento debe ser un número positivo.");
+        return;
+    }
+    if (isNaN(valorEdad) || valorEdad < 0) {
+        alert("La edad debe ser un número positivo.");
+        return;
+    }
     const nuevoPasajero = {
 
-        documento: document.getElementById("documento").value,
+        documento: valorDocumento,
         nombre: document.getElementById("nombre").value,
         apellido: document.getElementById("apellido").value,
-        edad: document.getElementById("edad").value,
+        edad: valorEdad,
         telefono: document.getElementById("telefono").value,
         salud: estado,
         direccion: document.getElementById("direccion").value

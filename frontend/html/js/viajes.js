@@ -95,17 +95,15 @@ async function cargarPlataforma(){
         </option>
     `;
 
-    listaPlataformas.forEach(plataformas => {
+    listaPlataformas.forEach(plataforma => {
+        // Usa la propiedad de ID que retorne la API de plataformas (ej: id o plataforma_id)
+        const id = plataforma.plataforma_id || plataforma.id; 
 
         plataformaOrigen.innerHTML += `
-            <option value="${plataformas.plataforma_origen_id}">
-                ${plataformas.pais}
-            </option>
+            <option value="${id}">${plataforma.pais}</option>
         `;
         plataformaDestino.innerHTML += `
-            <option value="${plataformas.plataforma_destino_id}">
-                ${plataformas.pais}
-            </option>
+            <option value="${id}">${plataforma.pais}</option>
         `;
     });
 }
@@ -124,7 +122,7 @@ async function cargarNave(){
     listaNaves.forEach(naves => {
 
         nave.innerHTML += `
-            <option value="${naves.naves_id}">
+            <option value="${naves.nave_id}">
                 ${naves.modelo}
             </option>
         `;
@@ -194,11 +192,16 @@ formViaje.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 
+    const valorDuracion = parseFloat(document.getElementById("duracion").value);
+    if (isNaN(valorDuracion) || valorDuracion <= 0) {
+        alert("La duración debe ser mayor que 1.");
+        return;
+    }
     const nuevoViaje = {
 
         fecha: document.getElementById("fecha").value,
         horario: document.getElementById("horario").value,
-        duracion: document.getElementById("duracion").value,
+        duracion: valorDuracion,
         estado: document.getElementById("estado").value,
         plataforma_origen: document.getElementById("plataforma_origen").value,
         plataforma_destino: document.getElementById("plataforma_destino").value,

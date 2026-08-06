@@ -43,6 +43,8 @@ function obtenerClaseEstado(estado) {
     return "";
 }
 
+
+
 async function obtenerNaves() {
     try {
         const respuesta = await fetch("http://localhost:3000/api/v1/nave");
@@ -116,16 +118,56 @@ botonNuevaNave.addEventListener("click", () => {
 
 });
 
+async function mayoresQue(input, numero) {
+    // Bloquea caracteres no deseados (signo menos y notación científica)
+    input.addEventListener('keydown', (e) => {
+    if (e.key === '-' || e.key === 'e' || e.key === 'E') {
+        e.preventDefault();
+    }
+    });
+
+    // Valida cuando el usuario termina de escribir o cambia de campo
+    input.addEventListener('change', (e) => {
+    const valor = parseFloat(e.target.value);
+
+    // Comprueba si el valor es menor o igual al número (o si no es un número válido)
+    if (isNaN(valor) || valor < numero) {
+        e.target.value = ''; // Limpia el campo
+        alert(`El número debe ser estrictamente mayor que ${numero}.`);
+    }
+    });
+}
+
 formNave.addEventListener("submit", async (event) => {
-
     event.preventDefault();
+    const valorTiempo = parseFloat(document.getElementById("tiempo").value);
+    const valorAnio = parseFloat(document.getElementById("anio").value);
+    const valorKilometraje = parseFloat(document.getElementById("kilometraje").value);
+    const valorCapacidad = parseFloat(document.getElementById("capacidad").value);
 
+    // Validaciones antes de enviar
+    if (isNaN(valorTiempo) || valorTiempo < 0) {
+        alert("El tiempo de uso debe ser un número positivo.");
+        return;
+    }
+    if (isNaN(valorAnio) || valorAnio < 0) {
+        alert("El año debe ser un número positivo.");
+        return;
+    }
+    if (isNaN(valorKilometraje) || valorKilometraje < 0) {
+        alert("El kilometraje debe ser un número positivo.");
+        return;
+    }
+    if (isNaN(valorCapacidad) || valorCapacidad < 1) {
+        alert("La capacidad debe ser un número estrictamente mayor que 0.");
+        return;
+    }
     const nuevaNave = {
         modelo: document.getElementById("modelo").value,
-        tiempo: document.getElementById("tiempo").value,
-        anio: document.getElementById("anio").value,
-        kilometraje: document.getElementById("kilometraje").value,
-        capacidad: document.getElementById("capacidad").value,
+        tiempo: valorTiempo,
+        anio: valorAnio,
+        kilometraje: valorKilometraje,
+        capacidad: valorCapacidad,
         estado: document.getElementById("estado").value
     };
     const url = naveEditando

@@ -164,13 +164,17 @@ formPlataforma.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     console.log("Formulario enviado");
-
+    const valorCapacidad = parseFloat(document.getElementById("capacidad").value);
+    if (isNaN(valorCapacidad) || valorCapacidad <= 0) {
+        alert("La capacidad debe ser un mayor o igual a 1.");
+        return;
+    }
     const nuevaPlataforma = {
 
         pais: document.getElementById("pais").value,
         latitud: document.getElementById("latitud").value,
         longitud: document.getElementById("longitud").value,
-        capacidad: document.getElementById("capacidad").value,
+        capacidad: valorCapacidad,
         estado: document.getElementById("estado").value
 
     };
