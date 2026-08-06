@@ -37,13 +37,13 @@ endpointsViaje.post("/", async (req, res) => {
 
         const plataforma_origen = await obtenerUnaPlataforma(req.body.plataforma_origen);
         const plataforma_destino = await obtenerUnaPlataforma(req.body.plataforma_destino)
-        if (!plataforma_origen || plataforma_origen.estado !== "operativa") {
+        if (!plataforma_origen || plataforma_origen.estado_plataforma !== "operativa") {
             return res.status(400).json({
                 message: "Operación rechazada. La plataforma de origen no está operando en este momento"
             });
         }
 
-        if (!plataforma_destino || plataforma_destino.estado !== "operativa") {
+        if (!plataforma_destino || plataforma_destino.estado_plataforma !== "operativa") {
             return res.status(400).json({
                 message: "Operación rechazada. La plataforma de destino no está operando en este momento"
             });

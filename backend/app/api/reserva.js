@@ -26,7 +26,7 @@ endpointsReserva.post("/", async (req, res) => {
     try {
         const id_pasajero = req.body.pasajero;
         const pasajero = await obtenerUnPasajero(id_pasajero);
-        if (!pasajero || pasajero.estado_medico !== "Apto") {
+        if (!pasajero || pasajero.estado_salud !== true) {
             return res.status(400).json({
                 message: "Operación rechazada. El pasajero no se encuentra apto para tomar el vuelo"
             });
