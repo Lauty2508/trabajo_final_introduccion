@@ -247,7 +247,7 @@ formReserva.addEventListener("submit", async (event) => {
         ? "PUT"
         : "POST";
 
-    await fetch(url, {
+    const respuesta = await fetch(url, {
 
         method: metodo,
 
@@ -258,6 +258,14 @@ formReserva.addEventListener("submit", async (event) => {
         body: JSON.stringify(nuevaReserva)
 
     });
+
+    const resultado = await respuesta.json();
+    if (!respuesta.ok) {
+        alert(resultado.message);
+        return;
+    }
+
+    alert(resultado.message);
 
     cerrarFormulario();
 
