@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { actualizarViaje, agregarViaje, eliminarViaje, obtenerTodosViajes, obtenerCantidadViajes, obtenerUnViaje } from '../db/viaje.js';
+import { actualizarViaje, agregarViaje, eliminarViaje, obtenerTodosViajes, obtenerCantidadViajes, obtenerUnViaje, obtenerTresViajes } from '../db/viaje.js';
 
 export const endpointsViaje = Router();
 
@@ -8,6 +8,12 @@ endpointsViaje.get("/count", async (req, res) => {
     const cantidad = await obtenerCantidadViajes();
     res.json({ total: cantidad });
 })
+
+// Para obtener todos los viajes
+endpointsViaje.get("/tres", async (req, res) => {
+    const viajes = await obtenerTresViajes();
+    res.json(viajes);
+}) 
 
 // Para obtener todos los viajes
 endpointsViaje.get("/", async (req, res) => {

@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="../css/styles.css">
     <script src="./js/index.js"></script>
-    <script>obtenerCantidades();</script>
+    <script>obtenerConexiones();</script>
 </head>
 
 <body>
@@ -90,12 +90,11 @@
             <div class="indicador disponible"></div>
 
             <div class="informacion-operacion">
-                <h4>Córdoba → Tokio</h4>
-                <p>Vuelo GL-204 · Plataforma Córdoba</p>
+                <h4 id="viaje-1"></h4>
+                <p id="informacion-1"></p>
             </div>
 
-            <span class="estado disponible-texto">
-                PROGRAMADO
+            <span class="estado disponible-texto" id="estado-1">
             </span>
 
         </article>
@@ -105,12 +104,11 @@
             <div class="indicador mantenimiento"></div>
 
             <div class="informacion-operacion">
-                <h4>Buenos Aires → París</h4>
-                <p>Vuelo GL-118 · En preparación</p>
+                <h4 id="viaje-2"></h4>
+                <p id="informacion-2"></p>
             </div>
 
-            <span class="estado mantenimiento-texto">
-                PREPARACIÓN
+            <span class="estado mantenimiento-texto" id="estado-2">
             </span>
 
         </article>
@@ -120,12 +118,11 @@
             <div class="indicador activo"></div>
 
             <div class="informacion-operacion">
-                <h4>Córdoba → Sídney</h4>
-                <p>Vuelo GL-309 · Operación autorizada</p>
+                <h4 id="viaje-3"></h4>
+                <p id="informacion-3"></p>
             </div>
 
-            <span class="estado activo-texto">
-                AUTORIZADO
+            <span class="estado activo-texto" id="estado-3">
             </span>
 
         </article>

@@ -7,6 +7,29 @@ export async function obtenerCantidadViajes(){
     return totalRegistros;
 }
 
+// Para obtener los primeros tres viajes
+export async function obtenerTresViajes(){
+    const query = `
+    SELECT 
+        v.Viaje_id,
+        v.Fecha_despegue,
+        v.Horario_salida,
+        v.Duracion,
+        v.Estado_despegues,
+        v.Plataforma_origen_id,
+        v.Plataforma_destino_id,
+        v.Naves_id,
+        CONCAT(po.Pais, ' (Id - ', po.Plataforma_id, ')') AS plataforma_origen_nombre,
+        CONCAT(pd.Pais, ' (Id - ', pd.Plataforma_id, ')') AS plataforma_destino_nombre
+    FROM VIAJE v
+    JOIN PLATAFORMA po ON v.Plataforma_origen_id = po.Plataforma_id
+    JOIN PLATAFORMA pd ON v.Plataforma_destino_id = pd.Plataforma_id
+    JOIN NAVE n ON v.Naves_id = n.Nave_id
+    ORDER BY Viaje_id ASC
+    LIMIT 3;`
+    const res = await db.query(query);
+    return res.rows;
+}
 
 // Para obtener todos los viajes
 export async function obtenerTodosViajes(){
