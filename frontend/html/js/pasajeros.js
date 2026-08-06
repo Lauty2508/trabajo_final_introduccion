@@ -59,6 +59,45 @@ const botonCancelar = document.getElementById("btn-cancelar");
 
 let pasajeroEditando = null;
 
+
+function quedarseSoloConLetras(inputLetras) {
+    inputLetras.addEventListener('input', function() {
+    
+    // Esta expresión regular busca cualquier carácter que NO sea:
+    // a-z, A-Z, letras con tildes, la letra ñ, o espacios en blanco (\s)
+    const regex = /[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g;
+    
+    // Reemplazamos lo que no coincida por una cadena vacía (lo eliminamos)
+    this.value = this.value.replace(regex, '');
+  });
+} 
+
+quedarseSoloConLetras(document.getElementById("nombre"));
+quedarseSoloConLetras(document.getElementById("apellido"));
+const nombre = document.getElementById("nombre");
+const apellido = document.getElementById("apellido");
+const telefono = document.getElementById("telefono");
+const direccion = document.getElementById("direccion");
+nombre.maxLength = 40;
+apellido.maxLength = 40;
+telefono.maxLength = 20;
+direccion.maxLength = 30;
+
+telefono.addEventListener('eliminar', (e) => {
+  let valor = e.target.value;
+
+  // 1. Elimina todo lo que no sea dígito o el signo +
+  valor = valor.replace(/[^\d+]/g, '');
+
+  // 2. Mantiene el '+' solo si es el primer carácter y elimina cualquier otro '+' extra
+  if (valor.includes('+')) {
+    const esInicial = valor.startsWith('+');
+    valor = (esInicial ? '+' : '') + valor.replace(/\+/g, '');
+  }
+
+  e.target.value = valor;
+});
+
 function abrirFormulario() {
 
     if (pasajeroEditando === null) {
@@ -109,12 +148,23 @@ formPasajero.addEventListener("submit", async (event) => {
     
     const estado = document.getElementById("estado-de-salud").value === "true";
 
+    const valorDocumento = parseFloat(document.getElementById("documento").value);
+    const valorEdad = parseFloat(document.getElementById("edad").value);
+
+    if (isNaN(valorDocumento) || valorDocumento < 0) {
+        alert("El documento debe ser un número positivo.");
+        return;
+    }
+    if (isNaN(valorEdad) || valorEdad < 0) {
+        alert("La edad debe ser un número positivo.");
+        return;
+    }
     const nuevoPasajero = {
 
-        documento: document.getElementById("documento").value,
+        documento: valorDocumento,
         nombre: document.getElementById("nombre").value,
         apellido: document.getElementById("apellido").value,
-        edad: document.getElementById("edad").value,
+        edad: valorEdad,
         telefono: document.getElementById("telefono").value,
         salud: estado,
         direccion: document.getElementById("direccion").value

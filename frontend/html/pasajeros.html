@@ -46,9 +46,9 @@
 
                 <label for="documento" class="titulo-modal">Documento</label>
                 <input
-                    type="text"
+                    type="number"
                     id="documento"
-                    placeholder="Documento"
+                    placeholder="Documento" min="0"
                     required>
 
                 <label for="nombre" class="titulo-modal">Nombre</label>
@@ -56,6 +56,8 @@
                     type="text"
                     id="nombre"
                     placeholder="Nombre"
+                    pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
+                    title="Solo se permiten letras"
                     required>
 
                 <label for="apellido" class="titulo-modal">Apellido</label>
@@ -63,6 +65,8 @@
                     type="text"
                     id="apellido"
                     placeholder="Apellido"
+                    pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
+                    title="Solo se permiten letras"
                     required>
 
                 <label for="edad" class="titulo-modal">Edad</label>
@@ -70,6 +74,7 @@
                     type="number"
                     id="edad"
                     placeholder="Edad"
+                    min="0"
                     required>
 
                 <label for="telefono" class="titulo-modal">Teléfono</label>
@@ -77,6 +82,8 @@
                     type="text"
                     id="telefono"
                     placeholder="Teléfono"
+                    pattern="\+\d+"
+                    title="Solo se permiten números"
                     required>
                 
                 <label for="estado-de-salud" class="titulo-modal">Estado de salud</label>

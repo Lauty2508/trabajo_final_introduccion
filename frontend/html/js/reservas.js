@@ -225,15 +225,24 @@ botonNuevaReserva.addEventListener("click", () => {
 
 iniciarPagina();
 
+const asiento = document.getElementById("codigo_asiento");
+asiento.maxLength = 10;
+
 formReserva.addEventListener("submit", async (event) => {
 
     event.preventDefault();
+
+    const valorPrecio = parseFloat(document.getElementById("precio_pasaje").value);
+    if (isNaN(valorPrecio) || valorPrecio <= 0) {
+        alert("El precio debe ser mayor o igual a 1.");
+        return;
+    }
 
     const nuevaReserva = {
 
         asiento: document.getElementById("codigo_asiento").value,
         fecha: document.getElementById("fecha_reserva").value,
-        precio: document.getElementById("precio_pasaje").value,
+        precio: valorPrecio,
         vuelo: document.getElementById("vuelo").value,
         pasajero: document.getElementById("pasajero").value
 

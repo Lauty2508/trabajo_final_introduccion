@@ -98,6 +98,23 @@ const botonCancelar = document.getElementById("btn-cancelar");
 
 let plataformaEditando = null;
 
+function quedarseSoloConLetras(inputLetras) {
+    inputLetras.addEventListener('input', function() {
+    
+    // Esta expresión regular busca cualquier carácter que NO sea:
+    // a-z, A-Z, letras con tildes, la letra ñ, o espacios en blanco (\s)
+    const regex = /[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g;
+    
+    // Reemplazamos lo que no coincida por una cadena vacía (lo eliminamos)
+    this.value = this.value.replace(regex, '');
+  });
+} 
+
+
+quedarseSoloConLetras(document.getElementById("pais"));
+const pais = document.getElementById("pais");
+pais.maxLength = 30;
+
 function abrirFormulario() {
 
     if (plataformaEditando === null) {
@@ -147,13 +164,17 @@ formPlataforma.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     console.log("Formulario enviado");
-
+    const valorCapacidad = parseFloat(document.getElementById("capacidad").value);
+    if (isNaN(valorCapacidad) || valorCapacidad <= 0) {
+        alert("La capacidad debe ser un mayor o igual a 1.");
+        return;
+    }
     const nuevaPlataforma = {
 
         pais: document.getElementById("pais").value,
         latitud: document.getElementById("latitud").value,
         longitud: document.getElementById("longitud").value,
-        capacidad: document.getElementById("capacidad").value,
+        capacidad: valorCapacidad,
         estado: document.getElementById("estado").value
 
     };

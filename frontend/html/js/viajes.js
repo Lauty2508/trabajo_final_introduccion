@@ -76,6 +76,61 @@ async function obtenerViajes() {
 
 }
 
+async function cargarPlataforma(){
+    const respuesta = await fetch(
+        "http://localhost:3000/api/v1/plataforma"
+    );
+
+    const listaPlataformas = await respuesta.json();
+    const plataformaOrigen = document.getElementById("plataforma_origen");
+    const plataformaDestino = document.getElementById("plataforma_destino");
+    plataformaOrigen.innerHTML = `
+        <option value="">
+            Seleccione una plataforma de origen
+        </option>
+    `;
+    plataformaDestino.innerHTML = `
+        <option value="">
+            Seleccione una plataforma de destino
+        </option>
+    `;
+
+    listaPlataformas.forEach(plataforma => {
+        // Usa la propiedad de ID que retorne la API de plataformas (ej: id o plataforma_id)
+        const id = plataforma.plataforma_id || plataforma.id; 
+
+        plataformaOrigen.innerHTML += `
+            <option value="${id}">${plataforma.pais}</option>
+        `;
+        plataformaDestino.innerHTML += `
+            <option value="${id}">${plataforma.pais}</option>
+        `;
+    });
+}
+async function cargarNave(){
+    const respuesta = await fetch(
+        "http://localhost:3000/api/v1/nave"
+    );
+
+    const listaNaves = await respuesta.json();
+    const nave = document.getElementById("nave");
+    nave.innerHTML = `
+        <option value="">
+            Seleccione una nave
+        </option>
+    `;
+    listaNaves.forEach(naves => {
+
+        nave.innerHTML += `
+            <option value="${naves.nave_id}">
+                ${naves.modelo}
+            </option>
+        `;
+    });
+}
+
+cargarNave();
+cargarPlataforma();
 obtenerViajes();
 
 const botonNuevoViaje = document.getElementById("btn-nuevo-viaje");
@@ -137,11 +192,16 @@ formViaje.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 
+    const valorDuracion = parseFloat(document.getElementById("duracion").value);
+    if (isNaN(valorDuracion) || valorDuracion <= 0) {
+        alert("La duración debe ser mayor que 1.");
+        return;
+    }
     const nuevoViaje = {
 
         fecha: document.getElementById("fecha").value,
         horario: document.getElementById("horario").value,
-        duracion: document.getElementById("duracion").value,
+        duracion: valorDuracion,
         estado: document.getElementById("estado").value,
         plataforma_origen: document.getElementById("plataforma_origen").value,
         plataforma_destino: document.getElementById("plataforma_destino").value,
