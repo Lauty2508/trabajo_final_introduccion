@@ -225,6 +225,9 @@ botonNuevaReserva.addEventListener("click", () => {
 
 iniciarPagina();
 
+const asiento = document.getElementById("codigo_asiento");
+asiento.maxLength = 10;
+
 formReserva.addEventListener("submit", async (event) => {
 
     event.preventDefault();

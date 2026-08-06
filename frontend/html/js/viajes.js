@@ -76,6 +76,63 @@ async function obtenerViajes() {
 
 }
 
+async function cargarPlataforma(){
+    const respuesta = await fetch(
+        "http://localhost:3000/api/v1/plataforma"
+    );
+
+    const listaPlataformas = await respuesta.json();
+    const plataformaOrigen = document.getElementById("plataforma_origen");
+    const plataformaDestino = document.getElementById("plataforma_destino");
+    plataformaOrigen.innerHTML = `
+        <option value="">
+            Seleccione una plataforma de origen
+        </option>
+    `;
+    plataformaDestino.innerHTML = `
+        <option value="">
+            Seleccione una plataforma de destino
+        </option>
+    `;
+
+    listaPlataformas.forEach(plataformas => {
+
+        plataformaOrigen.innerHTML += `
+            <option value="${plataformas.plataforma_origen_id}">
+                ${plataformas.pais}
+            </option>
+        `;
+        plataformaDestino.innerHTML += `
+            <option value="${plataformas.plataforma_destino_id}">
+                ${plataformas.pais}
+            </option>
+        `;
+    });
+}
+async function cargarNave(){
+    const respuesta = await fetch(
+        "http://localhost:3000/api/v1/nave"
+    );
+
+    const listaNaves = await respuesta.json();
+    const nave = document.getElementById("nave");
+    nave.innerHTML = `
+        <option value="">
+            Seleccione una nave
+        </option>
+    `;
+    listaNaves.forEach(naves => {
+
+        nave.innerHTML += `
+            <option value="${naves.naves_id}">
+                ${naves.modelo}
+            </option>
+        `;
+    });
+}
+
+cargarNave();
+cargarPlataforma();
 obtenerViajes();
 
 const botonNuevoViaje = document.getElementById("btn-nuevo-viaje");

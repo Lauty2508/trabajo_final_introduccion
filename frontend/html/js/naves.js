@@ -63,6 +63,9 @@ async function obtenerNaves() {
     }
 }
 
+const modelo = document.getElementById("modelo");
+modelo.maxLength = 30;
+
 obtenerNaves();
 
 // aparicion formulario

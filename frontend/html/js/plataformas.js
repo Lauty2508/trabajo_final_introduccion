@@ -98,6 +98,23 @@ const botonCancelar = document.getElementById("btn-cancelar");
 
 let plataformaEditando = null;
 
+function quedarseSoloConLetras(inputLetras) {
+    inputLetras.addEventListener('input', function() {
+    
+    // Esta expresión regular busca cualquier carácter que NO sea:
+    // a-z, A-Z, letras con tildes, la letra ñ, o espacios en blanco (\s)
+    const regex = /[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g;
+    
+    // Reemplazamos lo que no coincida por una cadena vacía (lo eliminamos)
+    this.value = this.value.replace(regex, '');
+  });
+} 
+
+
+quedarseSoloConLetras(document.getElementById("pais"));
+const pais = document.getElementById("pais");
+pais.maxLength = 30;
+
 function abrirFormulario() {
 
     if (plataformaEditando === null) {
