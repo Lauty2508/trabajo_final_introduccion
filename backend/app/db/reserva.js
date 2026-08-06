@@ -38,3 +38,15 @@ export async function actualizarReserva(id, asiento, fecha, precio, vuelo, pasaj
     const res = await db.query(query, [asiento, fecha, precio, vuelo, pasajero, id]);
     return res.rowCount == 1;
 }
+
+// Para obtener la cantidad de reservas realizadas para un vuelo
+export async function obtenerCantidadReservasPorViaje(vueloId, reservaIdExcluida = null) {
+    let query = "SELECT COUNT(*) FROM reserva WHERE Vuelo_id = $1";
+    const params = [vueloId];
+    if (reservaIdExcluida) {
+        query += " AND Reserva_id != $2";
+        params.push(reservaIdExcluida);
+    }
+    const res = await db.query(query, params);
+    return parseInt(res.rows[0].count, 10);
+}
