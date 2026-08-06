@@ -694,3 +694,14 @@ tbody tr:hover {
 
     margin-top: 10px;
 }
+
+.titulo-modal {
+    color: #f05a24ea;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 12px;
+}
+
+#titulo-formulario {
+    text-decoration: underline;
+}
