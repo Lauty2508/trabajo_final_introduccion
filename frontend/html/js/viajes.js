@@ -30,6 +30,8 @@ function crearFilaViaje(viaje) {
     `;
 }
 
+let listaViajes = [];
+
 function obtenerClaseEstado(estado) {
 
     if (estado === "Programado") {
@@ -55,6 +57,8 @@ async function obtenerViajes() {
         const respuesta = await fetch("http://localhost:3000/api/v1/viaje");
 
         const datos = await respuesta.json();
+
+        listaViajes = datos; // Guardamos los datos para validarlos luego
 
         const tabla = document.getElementById("tabla-viajes");
 
@@ -197,15 +201,48 @@ formViaje.addEventListener("submit", async (event) => {
         alert("La duración debe ser mayor que 1.");
         return;
     }
+
+    const fechaIngresada = document.getElementById("fecha").value;
+    const horarioIngresado = document.getElementById("horario").value;
+    const naveSeleccionada = document.getElementById("nave").value;
+
+    // Cálculo de Inicio y Fin del nuevo viaje en milisegundos
+    // Se agrega el ":00" para asegurar un formato válido en todos los navegadores
+    const inicioNuevoViaje = new Date(`${fechaIngresada}T${horarioIngresado}:00`).getTime();
+    // Sumamos la duración (minutos * 60000 para pasar a milisegundos)
+    const finNuevoViaje = inicioNuevoViaje + (valorDuracion * 60000); 
+
+    // Se verifica si hay algún conflicto con los viajes existentes
+    const hayConflicto = listaViajes.some(viaje => {
+        // Se ignora el viaje actual si estamos en modo "Edición"
+        if (viajeEditando && viaje.viaje_id == viajeEditando) return false;
+
+        // Si es otra nave distinta, no hay problema
+        if (viaje.naves_id != naveSeleccionada) return false;
+
+        // Cálculo de Inicio y Fin del viaje existente
+        const fechaLimpia = viaje.fecha_despegue.split("T")[0];
+        const inicioExistente = new Date(`${fechaLimpia}T${viaje.horario_salida}`).getTime();
+        const finExistente = inicioExistente + (viaje.duracion * 60000);
+
+        // Se verifica la superposición de rangos
+        return (inicioExistente < finNuevoViaje && inicioNuevoViaje < finExistente);
+    });
+
+    if (hayConflicto) {
+        alert("La nave seleccionada ya está ocupada en ese rango de fecha y horario por otro viaje.");
+        return;
+    }
+    
     const nuevoViaje = {
 
-        fecha: document.getElementById("fecha").value,
-        horario: document.getElementById("horario").value,
+        fecha: fechaIngresada,
+        horario: horarioIngresado,
         duracion: valorDuracion,
         estado: document.getElementById("estado").value,
         plataforma_origen: document.getElementById("plataforma_origen").value,
         plataforma_destino: document.getElementById("plataforma_destino").value,
-        naves: document.getElementById("nave").value
+        naves: naveSeleccionada
 
     };
 
