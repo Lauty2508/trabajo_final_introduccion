@@ -75,7 +75,7 @@ endpointsViaje.post("/", async (req, res) => {
             });
         }
 
-        const navesEnDestino = await obtenerCantidadViajesPorPlataforma(idDestino, req.body.fecha);
+        const navesEnDestino = await obtenerCantidadViajesPorPlataforma(idDestino, req.body.fecha, req.body.horario);
         if (navesEnDestino >= plataforma_destino.capacidad_max_naves) {
             return res.status(400).json({
                 message: "Operación rechazada. La plataforma de destino ha alcanzado su capacidad máxima."
@@ -152,7 +152,7 @@ endpointsViaje.put("/:id", async (req, res) => {
             });
         }
 
-        const navesEnDestino = await obtenerCantidadViajesPorPlataforma(idDestino, req.body.fecha, id);
+        const navesEnDestino = await obtenerCantidadViajesPorPlataforma(idDestino, req.body.fecha, req.body.horario, id);
         if (navesEnDestino >= plataforma_destino.capacidad_max_naves) {
             return res.status(400).json({
                 message: "Operación rechazada. La plataforma de destino ha alcanzado su capacidad máxima."
