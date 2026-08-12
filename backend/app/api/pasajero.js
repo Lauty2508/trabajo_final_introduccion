@@ -7,19 +7,17 @@ export const endpointsPasajero = Router();
 endpointsPasajero.get("/", async (req, res) => {
     const pasajeros = await obtenerTodosPasajeros();
     res.json(pasajeros);
-}) 
+})
 
 // Para obtener un solo pasajero
 endpointsPasajero.get("/:id", async (req, res) => {
     let id = req.params.id;
     const pasajero = await obtenerUnPasajero(id);
     res.json(pasajero);
-}) 
+})
 
 // Para agregar un pasajero
 endpointsPasajero.post("/", async (req, res) => {
-
-    console.log(req.body);
 
     const pasajero = await agregarPasajero(
         req.body.documento,
@@ -40,8 +38,8 @@ endpointsPasajero.delete("/", async (req, res) => {
     const pasajero = await eliminarPasajero(
         req.body.id
     );
-    res.status(200).json({message: "Pasajero eliminado."});
-}) 
+    res.status(200).json({ message: "Pasajero eliminado." });
+})
 
 // Para actualizar un pasajero
 endpointsPasajero.put("/:id", async (req, res) => {

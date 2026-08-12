@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { actualizarPlataforma, agregarPlataforma, eliminarPlataforma, obtenerCantidadPlataformas, obtenerTodasPlataformas, obtenerUnaPlataforma } from '../db/plataforma.js';
+import { actualizarPlataforma, agregarPlataforma, eliminarPlataforma, obtenerCantidadPlataformas, obtenerTodasPlataformas, obtenerUnaPlataforma, existePlataformaEnPais } from '../db/plataforma.js';
 
 export const endpointsPlataforma = Router();
 
@@ -13,51 +13,81 @@ endpointsPlataforma.get("/count", async (req, res) => {
 endpointsPlataforma.get("/", async (req, res) => {
     const plataformas = await obtenerTodasPlataformas();
     res.json(plataformas);
-}) 
+})
 
 // Para obtener una sola plataforma
 endpointsPlataforma.get("/:id", async (req, res) => {
     let id = req.params.id;
     const plataforma = await obtenerUnaPlataforma(id);
     res.json(plataforma);
-}) 
+})
 
 // Para agregar una plataforma
 endpointsPlataforma.post("/", async (req, res) => {
-    const plataforma = await agregarPlataforma(
-        req.body.pais,
-        req.body.latitud,
-        req.body.longitud,
-        req.body.capacidad,
-        req.body.estado
-    );
-    res.status(201).json({message: "Plataforma agregada."});
-}) 
+    try {
+        const paisRecibido = req.body.pais;
+        const paisOcupado = await existePlataformaEnPais(paisRecibido);
+        if (paisOcupado) {
+            return res.status(400).json({
+                message: "Operación rechazada. Este país ya tiene una plataforma"
+            });
+        }
+
+        const plataforma = await agregarPlataforma(
+            req.body.pais,
+            req.body.latitud,
+            req.body.longitud,
+            req.body.capacidad,
+            req.body.estado
+        );
+        res.status(201).json({ message: "Plataforma agregada." });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            message: "Error del servidor"
+        });
+    }
+})
 
 // Para eliminar una plataforma
 endpointsPlataforma.delete("/", async (req, res) => {
     const plataforma = await eliminarPlataforma(
         req.body.id
     );
-    res.status(200).json({message: "Plataforma eliminada."});
-}) 
+    res.status(200).json({ message: "Plataforma eliminada." });
+})
 
 // Para actualizar una plataforma
 endpointsPlataforma.put("/:id", async (req, res) => {
-    const id = req.params.id;
-    const exito = await actualizarPlataforma(
-        id,
-        req.body.pais,
-        req.body.latitud,
-        req.body.longitud,
-        req.body.capacidad,
-        req.body.estado
-    );
-    if (exito) {
-        res.status(200).json({ message: "Plataforma actualizada correctamente." });
-    } else {
-        res.status(404).json({ message: "No se encontro la plataforma para actualizar." });
+    try {
+        const id = req.params.id;
+        const paisRecibido = req.body.pais;
+        const paisOcupado = await existePlataformaEnPais(paisRecibido, id);
+
+        if (paisOcupado) {
+            return res.status(400).json({
+                message: "Operación rechazada. Este país ya tiene una plataforma"
+            });
+        }
+        const exito = await actualizarPlataforma(
+            id,
+            req.body.pais,
+            req.body.latitud,
+            req.body.longitud,
+            req.body.capacidad,
+            req.body.estado
+        );
+        if (exito) {
+            res.status(200).json({ message: "Plataforma actualizada correctamente." });
+        } else {
+            res.status(404).json({ message: "No se encontro la plataforma para actualizar." });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            message: "Error en el servidor al actualizar"
+        })
+
     }
 })
-
-
