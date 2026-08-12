@@ -14,6 +14,13 @@ export async function obtenerUnPasajero(id){
     return res.rows[0];
 }
 
+// Para obtener solo un pasajero por documento
+export async function obtenerUnPasajeroPorDocumento(documento){
+    const query = "SELECT * FROM pasajeros WHERE documento = $1;";
+    const res = await db.query(query, [documento]);
+    return res.rows[0];
+}
+
 // Para agregar un pasajero
 export async function agregarPasajero(documento, nombre, apellido, edad, telefono, salud, direccion){
 

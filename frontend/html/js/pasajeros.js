@@ -193,6 +193,11 @@ formPasajero.addEventListener("submit", async (event) => {
 
     console.log(resultado);
 
+    if (!respuesta.ok) {
+        alert(resultado.message);
+        return;
+    }
+
     cerrarFormulario();
 
     pasajeroEditando = null;

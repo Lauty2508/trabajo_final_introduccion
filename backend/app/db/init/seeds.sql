@@ -35,7 +35,7 @@ VALUES('Titan Vanguard', 45, 2026, 50000, 400, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Orion X', 6000, 2005, 30000000, 15, 'Fuera de servicio');
+VALUES('Orion X', 6000, 2005, 30000000, 15, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -47,15 +47,15 @@ VALUES('Comet Chaser', 300, 2026, 15000, 5, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Nebula Jumper', 8000, 1999, 50000000, 150, 'Fuera de servicio');
+VALUES('Nebula Jumper', 8000, 2000, 50000000, 150, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Horizon X', 210, 2025, 80000, 50, 'En mantenimiento');
+VALUES('Horizon X', 210, 2025, 80000, 50, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Icarus V', 9500, 2008, 25000000, 80, 'Fuera de servicio');
+VALUES('Icarus V', 9500, 2008, 25000000, 80, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -63,7 +63,7 @@ VALUES('Zenith Prime', 45, 2026, 10000, 200, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Apollo Legacy', 12000, 1985, 99000000, 3, 'Fuera de servicio');
+VALUES('Apollo Legacy', 12000, 2000, 99000000, 3, 'Fuera de servicio');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -87,7 +87,7 @@ VALUES('Vanguard', 120, 2025, 30000, 20, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Cosmos 99', 8500, 1998, 45000000, 150, 'Fuera de servicio');
+VALUES('Cosmos 99', 8500, 2000, 45000000, 150, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -99,7 +99,7 @@ VALUES('Prometheus', 6000, 2008, 25000000, 300, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Triton Base', 10000, 1990, 80000000, 5, 'Fuera de servicio');
+VALUES('Triton Base', 10000, 2000, 80000000, 5, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -107,7 +107,7 @@ VALUES('Aurora', 45, 2026, 8000, 12, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Eclipse', 2300, 2019, 5000000, 80, 'En revision tecnica');
+VALUES('Eclipse', 2300, 2019, 5000000, 80, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -123,7 +123,7 @@ VALUES('Hyperion', 4000, 2015, 9000000, 40, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Atlas Cargo', 7500, 2005, 35000000, 10, 'Fuera de servicio');
+VALUES('Atlas Cargo', 7500, 2005, 35000000, 10, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -131,7 +131,7 @@ VALUES('Genesis', 50, 2025, 20000, 100, 'En mantenimiento');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Odyssey', 11000, 1985, 99000000, 500, 'Fuera de servicio');
+VALUES('Odyssey', 11000, 2000, 99000000, 500, 'Fuera de servicio');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -147,11 +147,11 @@ VALUES('Stellar Fox', 150, 2024, 50000, 15, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Void Walker', 800, 2020, 2000000, 25, 'En revision tecnica');
+VALUES('Void Walker', 800, 2020, 2000000, 25, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Infinity', 9500, 2000, 60000000, 200, 'Fuera de servicio');
+VALUES('Infinity', 9500, 2000, 60000000, 200, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -171,7 +171,7 @@ VALUES('Cygnus', 3300, 2016, 7000000, 120, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Draco', 10500, 1995, 75000000, 20, 'Fuera de servicio');
+VALUES('Draco', 10500, 2000, 75000000, 20, 'Fuera de servicio');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -195,7 +195,7 @@ VALUES('Chariot', 7000, 2007, 28000000, 15, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Nomad', 15000, 1980, 99999999, 1, 'Fuera de servicio');
+VALUES('Nomad', 15000, 2000, 99999999, 1, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -203,7 +203,7 @@ VALUES('Wanderer', 950, 2021, 2200000, 10, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Seeker', 110, 2025, 45000, 6, 'En mantenimiento');
+VALUES('Seeker', 110, 2025, 45000, 6, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -227,9 +227,9 @@ VALUES('Horizon Y', 15, 2026, 5000, 400, 'Operativa');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('25333444', 'Laura', 'Martinez', 35, '+541155557777', true, 'Calle Falsa 123');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('40999888', 'Julian', 'Alvarez', 24, '+541155558888', false, 'Av. Libertador 5500');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('40999888', 'Julian', 'Alvarez', 24, '+541155558888', true, 'Av. Libertador 5500');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('18555666', 'Carmen', 'Lopez', 62, '+541155551111', false, 'Florida 900');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('18555666', 'Carmen', 'Lopez', 62, '+541155551111', true, 'Florida 900');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('12345678', 'Ana', 'García', 29, '+541166661111', true, 'San Martin 444');
 
@@ -241,17 +241,17 @@ INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estad
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('77889900', 'Ricardo', 'Darin', 67, '+541133332222', true, 'Palermo Chico 50');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('99887766', 'Guillermo', 'Francella', 69, '+541144445555', false, 'Belgrano 1200');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('99887766', 'Guillermo', 'Francella', 69, '+541144445555', true, 'Belgrano 1200');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('20304050', 'Charly', 'Garcia', 72, '+541122221111', false, 'Coronel Diaz 1905');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('20304050', 'Charly', 'Garcia', 72, '+541122221111', true, 'Coronel Diaz 1905');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('30405060', 'Natalia', 'Oreiro', 46, '+59829001122', true, 'Montevideo 300');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000022', 'Clint', 'Eastwood', 93, '+13105550002', true, 'Carmel 15');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000023', 'Carl', 'Fredricksen', 90, '+15550003333', false, 'Paradise Falls 1');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000023', 'Carl', 'Fredricksen', 90, '+15550003333', true, 'Paradise Falls 1');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000024', 'Rose', 'Dawson', 101, '+15550004444', false, 'Ocean Blvd 84');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000024', 'Rose', 'Dawson', 101, '+15550004444', true, 'Ocean Blvd 84');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000025', 'Julio', 'Bocca', 57, '+541188880005', true, 'Corrientes 800');
 
@@ -263,15 +263,15 @@ INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estad
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000039', 'Morgan', 'Freeman', 87, '+16625550019', true, 'Charleston 20');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000040', 'Guillermo', 'Del Toro', 59, '+52555550020', false, 'Guadalajara 90');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000040', 'Guillermo', 'Del Toro', 59, '+52555550020', true, 'Guadalajara 90');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('30111222', 'Ramón', 'Ábila', 28, '+541155554444', true, 'Av. Corrientes 1234');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('22334455', 'Mariano', 'Gómez', 51, '+573001234567', true, 'Calle 8 N 12');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('33445566', 'Ezequiel', 'Cerutti', 60, '+541100009999', false, 'Segurola y Habana 4310');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('33445566', 'Ezequiel', 'Cerutti', 60, '+541100009999', true, 'Segurola y Habana 4310');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('44556677', 'Javier', 'Pastore', 80, '+541177778888', false, 'Arroyo 800');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('44556677', 'Javier', 'Pastore', 80, '+541177778888', true, 'Arroyo 800');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('11223344', 'Walter', 'Lugones', 27, '+13105550123', true, 'Beverly Hills 90210');
 
@@ -279,15 +279,15 @@ INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estad
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('40506070', 'Manuel', 'Ginobili', 48, '+12105550147', true, 'San Antonio 20');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('50607080', 'Juan Carlos', 'Jiménez', 74, '+541199990000', false, 'Tucuman 100');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('50607080', 'Juan Carlos', 'Jiménez', 74, '+541199990000', true, 'Tucuman 100');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('60708090', 'Javier', 'Campo', 25, '+541155556666', true, 'Ramos Mejia 10');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000021', 'Pedro', 'Zalewski', 97, '+541188880001', false, 'Av. Libertador 2000');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000021', 'Pedro', 'Zalewski', 97, '+541188880001', true, 'Av. Libertador 2000');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000026', 'Rudi', 'Goretzka', 32, '+541188880006', true, 'Palermo 123');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000027', 'John', 'Guehi', 68, '+14255550007', false, 'Medina 18');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000027', 'John', 'Guehi', 68, '+14255550007', true, 'Medina 18');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000028', 'Pablo', 'Rodríguez', 35, '+541188880008', true, 'Nuñez 500');
 
@@ -299,9 +299,9 @@ INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estad
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000035', 'Ismalia', 'Mendy', 40, '+16505550015', true, 'Palo Alto 1');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000036', 'Roberto', 'Diccesare', 81, '+5625550016', false, 'Santiago 100');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000036', 'Roberto', 'Diccesare', 81, '+5625550016', true, 'Santiago 100');
 
-INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000037', 'Federico', 'Lombardi', 88, '+34915550017', false, 'Madrid 55');
+INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000037', 'Federico', 'Lombardi', 88, '+34915550017', true, 'Madrid 55');
 
 INSERT INTO public.pasajeros (documento, nombre, apellido, edad, telefono, estado_salud, direccion) VALUES('90000038', 'Santiago', 'Gutiérrez', 86, '+13105550018', true, 'Malibu 7');
 
@@ -349,7 +349,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Estados Unidos', 28.392200, -80.607700, 12, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Japon', 30.400000, 130.970000, 8, 'En mantenimiento');
+VALUES('Japon', 30.400000, 130.970000, 8, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Brasil', -15.793800, -47.882700, 6, 'Operativa');
@@ -364,7 +364,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Australia', -35.280900, 149.130000, 8, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('España', 40.416700, -3.703200, 5, 'En mantenimiento');
+VALUES('España', 40.416700, -3.703200, 5, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Canada', 45.421500, -75.697100, 7, 'Operativa');
@@ -376,7 +376,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Mexico', 19.432600, -99.133200, 12, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Reino Unido', 51.507400, -0.127800, 8, 'En mantenimiento');
+VALUES('Reino Unido', 51.507400, -0.127800, 8, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Sudafrica', -33.924900, 18.424100, 5, 'Operativa');
@@ -385,7 +385,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Emiratos Arabes', 25.204800, 55.270800, 25, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Rusia', 55.755800, 37.617300, 10, 'Fuera de servicio');
+VALUES('Rusia', 55.755800, 37.617300, 10, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Chile', -33.448900, -70.669300, 4, 'Operativa');
@@ -397,7 +397,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Egipto', 30.044400, 31.235700, 3, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Alemania', 52.520000, 13.405000, 15, 'En mantenimiento');
+VALUES('Alemania', 52.520000, 13.405000, 15, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Corea del Sur', 37.566500, 126.978000, 12, 'Operativa');
@@ -409,7 +409,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Colombia', 4.711000, -74.072100, 10, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Uruguay', -34.901100, -56.164500, 5, 'En mantenimiento');
+VALUES('Uruguay', -34.901100, -56.164500, 5, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Bolivia', -16.500000, -68.119300, 3, 'Operativa');
@@ -418,7 +418,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Paraguay', -25.263700, -57.575900, 4, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Venezuela', 10.480600, -66.903600, 6, 'Fuera de servicio');
+VALUES('Venezuela', 10.480600, -66.903600, 6, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Ecuador', -0.180700, -78.467800, 7, 'Operativa');
@@ -427,7 +427,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Noruega', 59.913900, 10.752200, 12, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Suecia', 59.329300, 18.068600, 15, 'En mantenimiento');
+VALUES('Suecia', 59.329300, 18.068600, 15, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Finlandia', 60.169500, 24.935500, 9, 'Operativa');
@@ -442,7 +442,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Nueva Zelanda', -41.286500, 174.776200, 11, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Singapur', 1.352100, 103.819800, 20, 'En mantenimiento');
+VALUES('Singapur', 1.352100, 103.819800, 20, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Tailandia', 13.756300, 100.501800, 16, 'Operativa');
@@ -451,7 +451,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Marruecos', 34.020900, -6.841600, 5, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Kenia', -1.292100, 36.821900, 7, 'Fuera de servicio');
+VALUES('Kenia', -1.292100, 36.821900, 7, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Nigeria', 9.082000, 8.675300, 10, 'Operativa');
@@ -460,7 +460,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Sudan', 15.500700, 32.559900, 3, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Angola', -8.839000, 13.289400, 4, 'En mantenimiento');
+VALUES('Angola', -8.839000, 13.289400, 4, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Portugal', 38.722300, -9.139300, 9, 'Operativa');
@@ -472,7 +472,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Polonia', 52.229700, 21.012200, 13, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Ucrania', 50.450100, 30.523400, 11, 'Fuera de servicio');
+VALUES('Ucrania', 50.450100, 30.523400, 11, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Suiza', 46.948000, 7.447400, 5, 'Operativa');
@@ -493,7 +493,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Islandia', 64.146600, -21.942600, 4, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Cuba', 23.113600, -82.366600, 5, 'Fuera de servicio');
+VALUES('Cuba', 23.113600, -82.366600, 5, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Jamaica', 18.017900, -76.809900, 3, 'Operativa');
@@ -502,7 +502,7 @@ INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, est
 VALUES('Costa Rica', 9.928100, -84.090700, 6, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
-VALUES('Panama', 8.982400, -79.519900, 15, 'En mantenimiento');
+VALUES('Panama', 8.982400, -79.519900, 15, 'Operativa');
 
 INSERT INTO public.plataforma (pais, latitud, longitud, capacidad_max_naves, estado_plataforma)
 VALUES('Puerto Rico', 18.465500, -66.105700, 8, 'Operativa');
@@ -535,11 +535,11 @@ VALUES('2026-12-20', '18:45:00', 80, 'Programado', 5, 2, 7);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-07-01', '10:00:00', 48, 'Autorizado', 6, 10, 9);
+VALUES('2026-08-16', '10:00:00', 48, 'Autorizado', 6, 10, 9);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-07-15', '22:30:00', 110, 'Autorizado', 10, 7, 6);
+VALUES('2026-09-16', '22:30:00', 110, 'Autorizado', 10, 7, 6);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -547,7 +547,7 @@ VALUES('2027-01-10', '05:00:00', 72, 'Programado', 7, 9, 4);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-08-05', '13:15:00', 36, 'Preparación', 8, 5, 10);
+VALUES('2026-08-26', '13:15:00', 36, 'Preparación', 8, 5, 10);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -603,11 +603,11 @@ VALUES('2027-01-15', '08:30:00', 120, 'Programado', 3, 12, 20);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-07-26', '15:00:00', 50, 'Preparación', 14, 7, 11);
+VALUES('2026-08-27', '15:00:00', 50, 'Preparación', 14, 7, 11);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-08-10', '07:00:00', 40, 'Autorizado', 16, 9, 16);
+VALUES('2026-08-28', '07:00:00', 40, 'Autorizado', 16, 9, 16);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -627,7 +627,7 @@ VALUES('2026-10-01', '16:45:00', 100, 'Programado', 20, 1, 20);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-05-10', '05:30:00', 25, 'Autorizado', 18, 5, 16);
+VALUES('2026-09-11', '05:30:00', 25, 'Autorizado', 18, 5, 16);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -643,7 +643,7 @@ VALUES('2026-11-22', '12:30:00', 60, 'Preparación', 26, 30, 23);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-05-15', '16:00:00', 120, 'Autorizado', 22, 55, 25);
+VALUES('2026-09-16', '16:00:00', 120, 'Autorizado', 22, 55, 25);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -655,7 +655,7 @@ VALUES('2026-12-10', '18:45:00', 90, 'Autorizado', 29, 31, 28);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-08-05', '09:30:00', 15, 'Preparación', 33, 34, 32);
+VALUES('2026-08-29', '09:30:00', 15, 'Preparación', 33, 34, 32);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -671,7 +671,7 @@ VALUES('2027-02-14', '07:00:00', 72, 'Programado', 48, 50, 41);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-06-30', '11:20:00', 85, 'Autorizado', 52, 53, 43);
+VALUES('2026-10-11', '11:20:00', 85, 'Autorizado', 52, 53, 43);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -687,7 +687,7 @@ VALUES('2026-12-25', '23:59:00', 200, 'Programado', 15, 26, 51);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-07-10', '10:00:00', 10, 'Preparación', 44, 51, 50);
+VALUES('2026-10-21', '10:00:00', 10, 'Preparación', 44, 51, 50);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
@@ -727,7 +727,7 @@ VALUES('2027-05-10', '09:00:00', 140, 'Programado', 10, 48, 31);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
-VALUES('2026-07-20', '16:30:00', 55, 'Preparación', 19, 29, 39);
+VALUES('2026-11-02', '16:30:00', 55, 'Preparación', 19, 29, 39);
 
 INSERT INTO public.viaje
 (fecha_despegue, horario_salida, duracion, estado_despegues, plataforma_origen_id, plataforma_destino_id, naves_id)
