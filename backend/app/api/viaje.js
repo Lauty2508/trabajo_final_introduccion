@@ -89,7 +89,7 @@ endpointsViaje.post("/", async (req, res) => {
             });
         }
 
-        const tieneVueloMismoHorario = await existeViajeNaveEnHorario(req.body.naves, req.body.fecha, req.body.horario);
+        const tieneVueloMismoHorario = await existeViajeNaveEnHorario(req.body.naves, req.body.fecha, req.body.horario, req.body.duracion);
         if (tieneVueloMismoHorario) {
             return res.status(400).json({
                 message: "Operación rechazada. La nave ya tiene asignado un vuelo en esa fecha y horario."
@@ -173,7 +173,7 @@ endpointsViaje.put("/:id", async (req, res) => {
             });
         }
 
-        const tieneVueloMismoHorario = await existeViajeNaveEnHorario(req.body.naves, req.body.fecha, req.body.horario, id);
+        const tieneVueloMismoHorario = await existeViajeNaveEnHorario(req.body.naves, req.body.fecha, req.body.horario, req.body.duracion, id);
         if (tieneVueloMismoHorario) {
             return res.status(400).json({
                 message: "Operación rechazada. La nave ya tiene asignado un vuelo en esa fecha y horario."
