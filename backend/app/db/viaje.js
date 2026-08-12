@@ -115,11 +115,17 @@ export async function obtenerCantidadViajesPorPlataforma(plataformaId, fecha, vi
 }
 
 // Para verificar si una nave ya tiene asignado un viaje en la misma fecha y horario
-export async function existeViajeNaveEnHorario(naveId, fecha, horario, viajeIdExcluido = null) {
-    let query = "SELECT COUNT(*) FROM viaje WHERE Naves_id = $1 AND Fecha_despegue = $2 AND Horario_salida = $3";
-    const params = [naveId, fecha, horario];
+export async function existeViajeNaveEnHorario(naveId, fecha, horario, duracion, viajeIdExcluido = null) {
+    let query = `
+        SELECT COUNT(*) 
+        FROM viaje 
+        WHERE Naves_id = $1 
+        AND (Fecha_despegue + Horario_salida) < ($2::date + $3::time + ($4::integer * interval '1 minute'))
+        AND ($2::date + $3::time) < (Fecha_despegue + Horario_salida + (Duracion * interval '1 minute'))
+    `;
+    const params = [naveId, fecha, horario, duracion];
     if (viajeIdExcluido) {
-        query += " AND Viaje_id != $4";
+        query += " AND Viaje_id != $5";
         params.push(viajeIdExcluido);
     }
     const res = await db.query(query, params);

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { actualizarViaje, agregarViaje, eliminarViaje, obtenerTodosViajes, obtenerCantidadViajes, obtenerUnViaje, obtenerCantidadViajesPorPlataforma, existeViajeNaveEnHorario } from '../db/viaje.js';
+import { actualizarViaje, agregarViaje, eliminarViaje, obtenerTodosViajes, obtenerCantidadViajes, obtenerUnViaje, obtenerCantidadViajesPorPlataforma, existeViajeNaveEnHorario, obtenerTresViajes } from '../db/viaje.js';
 import { obtenerUnaNave } from '../db/nave.js';
 import { obtenerUnaPlataforma } from '../db/plataforma.js';
 
@@ -11,11 +11,18 @@ endpointsViaje.get("/count", async (req, res) => {
     res.json({ total: cantidad });
 })
 
+
+// Para obtener tres viajes
+endpointsViaje.get("/tres", async (req, res) => {
+    const viajes = await obtenerTresViajes();
+    res.json(viajes);
+})
+
 // Para obtener todos los viajes
 endpointsViaje.get("/", async (req, res) => {
     const viajes = await obtenerTodosViajes();
     res.json(viajes);
-})
+})    
 
 // Para obtener un solo viaje
 endpointsViaje.get("/:id", async (req, res) => {
@@ -75,7 +82,7 @@ endpointsViaje.post("/", async (req, res) => {
             });
         }
 
-        const tieneVueloMismoHorario = await existeViajeNaveEnHorario(req.body.naves, req.body.fecha, req.body.horario);
+        const tieneVueloMismoHorario = await existeViajeNaveEnHorario(req.body.naves, req.body.fecha, req.body.horario, req.body.duracion);
         if (tieneVueloMismoHorario) {
             return res.status(400).json({
                 message: "Operación rechazada. La nave ya tiene asignado un vuelo en esa fecha y horario."
@@ -152,7 +159,7 @@ endpointsViaje.put("/:id", async (req, res) => {
             });
         }
 
-        const tieneVueloMismoHorario = await existeViajeNaveEnHorario(req.body.naves, req.body.fecha, req.body.horario, id);
+        const tieneVueloMismoHorario = await existeViajeNaveEnHorario(req.body.naves, req.body.fecha, req.body.horario, req.body.duracion, id);
         if (tieneVueloMismoHorario) {
             return res.status(400).json({
                 message: "Operación rechazada. La nave ya tiene asignado un vuelo en esa fecha y horario."

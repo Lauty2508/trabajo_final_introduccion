@@ -38,6 +38,15 @@ endpointsReserva.post("/", async (req, res) => {
             });
         }
 
+        const fechaReserva = new Date(req.body.fecha);
+        const fechaViaje = new Date(viaje.fecha_despegue);
+
+        if (fechaReserva > fechaViaje) {
+            return res.status(400).json({
+                message: "Operación rechazada. La fecha de la reserva no puede ser posterior a la del viaje."
+            });
+        }
+
         const nave = await obtenerUnaNave(viaje.naves_id);
         if (!nave) {
             return res.status(400).json({
@@ -95,6 +104,15 @@ endpointsReserva.put("/:id", async (req, res) => {
         if (!viaje) {
             return res.status(400).json({
                 message: "Operación rechazada. El vuelo especificado no existe"
+            });
+        }
+
+        const fechaReserva = new Date(req.body.fecha);
+        const fechaViaje = new Date(viaje.fecha_despegue);
+
+        if (fechaReserva > fechaViaje) {
+            return res.status(400).json({
+                message: "Operación rechazada. La fecha de la reserva no puede ser posterior a la del viaje."
             });
         }
 

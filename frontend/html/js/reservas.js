@@ -238,6 +238,20 @@ formReserva.addEventListener("submit", async (event) => {
         return;
     }
 
+    const idViajeSeleccionado = document.getElementById("vuelo").value;
+    const fechaReservaStr = document.getElementById("fecha_reserva").value;
+
+    const viajeSeleccionado = listaViajes.find(viaje => viaje.viaje_id == idViajeSeleccionado);
+
+    if (viajeSeleccionado) {
+        const fechaReserva = new Date(fechaReservaStr);
+        const fechaViaje = new Date(viajeSeleccionado.fecha_despegue.split("T")[0]);
+        if (fechaReserva > fechaViaje) {
+            alert("La fecha de la reserva no puede ser posterior a la fecha de despegue del viaje.");
+            return;
+        }
+    };
+
     const nuevaReserva = {
 
         asiento: document.getElementById("codigo_asiento").value,
