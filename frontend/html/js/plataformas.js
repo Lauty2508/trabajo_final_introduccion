@@ -65,7 +65,7 @@ async function obtenerPlataformas() {
         const respuesta = await fetch("http://localhost:3000/api/v1/plataforma");
 
         const datos = await respuesta.json();
-        
+
         const tabla = document.getElementById("tabla-plataformas");
 
         let filas = "";
@@ -99,16 +99,16 @@ const botonCancelar = document.getElementById("btn-cancelar");
 let plataformaEditando = null;
 
 function quedarseSoloConLetras(inputLetras) {
-    inputLetras.addEventListener('input', function() {
-    
-    // Esta expresión regular busca cualquier carácter que NO sea:
-    // a-z, A-Z, letras con tildes, la letra ñ, o espacios en blanco (\s)
-    const regex = /[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g;
-    
-    // Reemplazamos lo que no coincida por una cadena vacía (lo eliminamos)
-    this.value = this.value.replace(regex, '');
-  });
-} 
+    inputLetras.addEventListener('input', function () {
+
+        // Esta expresión regular busca cualquier carácter que NO sea:
+        // a-z, A-Z, letras con tildes, la letra ñ, o espacios en blanco (\s)
+        const regex = /[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g;
+
+        // Reemplazamos lo que no coincida por una cadena vacía (lo eliminamos)
+        this.value = this.value.replace(regex, '');
+    });
+}
 
 
 quedarseSoloConLetras(document.getElementById("pais"));
@@ -202,6 +202,11 @@ formPlataforma.addEventListener("submit", async (event) => {
     const resultado = await respuesta.json();
 
     console.log(resultado);
+
+    if (!respuesta.ok) {
+        alert(resultado.message);
+        return;
+    }
 
     cerrarFormulario();
 

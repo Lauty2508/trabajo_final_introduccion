@@ -1,14 +1,14 @@
 import { db } from './pool.js';
 
 // Para obtener la cantidad de viajes
-export async function obtenerCantidadViajes(){
+export async function obtenerCantidadViajes() {
     const query = await db.query('SELECT COUNT(*) FROM viaje');
     const totalRegistros = parseInt(query.rows[0].count, 10);
     return totalRegistros;
 }
 
 // Para obtener los primeros tres viajes
-export async function obtenerTresViajes(){
+export async function obtenerTresViajes() {
     const query = `
     SELECT 
         v.Viaje_id,
@@ -32,7 +32,7 @@ export async function obtenerTresViajes(){
 }
 
 // Para obtener todos los viajes
-export async function obtenerTodosViajes(){
+export async function obtenerTodosViajes() {
     const query = `
     SELECT 
         v.Viaje_id,
@@ -57,7 +57,7 @@ export async function obtenerTodosViajes(){
 
 
 // Para obtener solo un viaje
-export async function obtenerUnViaje(id){
+export async function obtenerUnViaje(id) {
     const query = "SELECT * FROM viaje WHERE Viaje_id = $1;";
     const res = await db.query(query, [id]);
     return res.rows[0];
@@ -65,7 +65,7 @@ export async function obtenerUnViaje(id){
 
 
 // Para agregar un viaje
-export async function agregarViaje(fecha, horario, duracion, estado, plataforma_origen, plataforma_destino, naves){
+export async function agregarViaje(fecha, horario, duracion, estado, plataforma_origen, plataforma_destino, naves) {
     const query = "INSERT INTO viaje (Fecha_despegue, Horario_salida, Duracion, Estado_despegues, Plataforma_origen_id, Plataforma_destino_id, Naves_id) VALUES ($1, $2, $3, $4, $5, $6, $7);";
     const res = await db.query(query, [fecha, horario, duracion, estado, plataforma_origen, plataforma_destino, naves]);
     return res.rowCount == 1;
@@ -79,22 +79,39 @@ export async function actualizarViaje(id, fecha, horario, duracion, estado, plat
 }
 
 // Para eliminar un viaje
-export async function eliminarViaje(id){
+export async function eliminarViaje(id) {
     const query = "DELETE FROM viaje WHERE Viaje_id = $1";
     const res = await db.query(query, [id]);
     return res.rowCount == 1;
 }
 
 // Para obtener la cantidad de viajes asignados a una plataforma (como origen o destino)
-export async function obtenerCantidadViajesPorPlataforma(plataformaId, viajeIdExcluido = null) {
-    let query = "SELECT COUNT(*) FROM viaje WHERE (Plataforma_origen_id = $1 OR Plataforma_destino_id = $1)";
-    const params = [plataformaId];
+export async function obtenerCantidadViajesPorPlataforma(plataformaId, fecha, viajeIdExcluido = null) {
+    let params = [plataformaId, fecha];
+    let query = "";
+
     if (viajeIdExcluido) {
-        query += " AND Viaje_id != $2";
         params.push(viajeIdExcluido);
+        query = `
+            SELECT 
+                (SELECT COUNT(*) FROM viaje WHERE Plataforma_destino_id = $1 AND Fecha_despegue <= $2 AND Viaje_id != $3) 
+                - 
+                (SELECT COUNT(*) FROM viaje WHERE Plataforma_origen_id = $1 AND Fecha_despegue <= $2 AND Viaje_id != $3) 
+            AS ocupacion;
+        `;
+    } else {
+        query = `
+            SELECT 
+                (SELECT COUNT(*) FROM viaje WHERE Plataforma_destino_id = $1 AND Fecha_despegue <= $2) 
+                - 
+                (SELECT COUNT(*) FROM viaje WHERE Plataforma_origen_id = $1 AND Fecha_despegue <= $2) 
+            AS ocupacion;
+        `;
     }
+
     const res = await db.query(query, params);
-    return parseInt(res.rows[0].count, 10);
+    let ocupacion = parseInt(res.rows[0].ocupacion, 10);
+    return ocupacion < 0 ? 0 : ocupacion;
 }
 
 // Para verificar si una nave ya tiene asignado un viaje en la misma fecha y horario
@@ -108,4 +125,3 @@ export async function existeViajeNaveEnHorario(naveId, fecha, horario, viajeIdEx
     const res = await db.query(query, params);
     return parseInt(res.rows[0].count, 10) > 0;
 }
-
