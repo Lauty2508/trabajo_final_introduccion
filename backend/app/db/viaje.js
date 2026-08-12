@@ -87,7 +87,6 @@ export async function eliminarViaje(id) {
 
 // Para obtener la cantidad de viajes asignados a una plataforma (como origen o destino)
 export async function obtenerCantidadViajesPorPlataforma(plataformaId, fecha, horario, viajeIdExcluido = null) {
-    // Sumamos el horario a los parámetros
     let params = [plataformaId, fecha, horario];
     let query = "";
 
@@ -112,7 +111,6 @@ export async function obtenerCantidadViajesPorPlataforma(plataformaId, fecha, ho
 
     const res = await db.query(query, params);
     let ocupacion = parseInt(res.rows[0].ocupacion, 10);
-
     return ocupacion < 0 ? 0 : ocupacion;
 }
 
