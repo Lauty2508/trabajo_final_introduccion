@@ -34,6 +34,18 @@ endpointsViaje.get("/:id", async (req, res) => {
 // Para agregar un viaje
 endpointsViaje.post("/", async (req, res) => {
     try {
+        const fecha = new Date(req.body.fecha);
+        const hoy = new Date();
+
+        hoy.setHours(0, 0, 0, 0);
+        fecha.setHours(0, 0, 0, 0);
+
+        if (fecha < hoy) {
+            return res.status(400).json({
+                message: "Operación rechazada. La fecha del viaje no puede ser anterior a hoy."
+            });
+        }
+
         const idOrigen = Number(req.body.plataforma_origen);
         const idDestino = Number(req.body.plataforma_destino);
 

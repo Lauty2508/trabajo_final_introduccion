@@ -25,6 +25,12 @@ endpointsNave.get("/:id", async (req, res) => {
 
 // Para agregar una nave
 endpointsNave.post("/", async (req, res) => {
+    const anio = Number(req.body.anio);
+        if (anio < 2000){
+        return res.status(400).json({
+            error: "El año de fabricacion debe ser 2000 o posterior"
+        })
+    }
     const nave = await agregarNave(
         req.body.modelo,
         req.body.tiempo,
