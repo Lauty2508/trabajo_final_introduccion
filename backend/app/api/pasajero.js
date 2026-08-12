@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { actualizarPasajero, agregarPasajero, eliminarPasajero, obtenerTodosPasajeros, obtenerUnPasajero } from '../db/pasajero.js';
+import { actualizarPasajero, agregarPasajero, eliminarPasajero, obtenerTodosPasajeros, obtenerUnPasajero, obtenerUnPasajeroPorDocumento } from '../db/pasajero.js';
 
 export const endpointsPasajero = Router();
 
@@ -18,6 +18,13 @@ endpointsPasajero.get("/:id", async (req, res) => {
 
 // Para agregar un pasajero
 endpointsPasajero.post("/", async (req, res) => {
+
+    const existe = await obtenerUnPasajeroPorDocumento(req.body.documento);
+    if (existe) {
+        return res.status(400).json({
+            message: "Operación rechazada. El DNI (Documento) ya pertenece a otro pasajero"
+        });
+    }
 
     const pasajero = await agregarPasajero(
         req.body.documento,
@@ -44,6 +51,14 @@ endpointsPasajero.delete("/", async (req, res) => {
 // Para actualizar un pasajero
 endpointsPasajero.put("/:id", async (req, res) => {
     const id = req.params.id;
+
+    const pasajeroExistente = await obtenerUnPasajeroPorDocumento(req.body.documento);
+    if (pasajeroExistente && pasajeroExistente.pasajero_id != id) {
+        return res.status(400).json({
+            message: "Operación rechazada. El DNI (Documento) ya pertenece a otro pasajero"
+        });
+    }
+
     const exito = await actualizarPasajero(
         id,
         req.body.documento,
