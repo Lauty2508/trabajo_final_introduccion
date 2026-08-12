@@ -1,9 +1,9 @@
 create table NAVE (Nave_id SERIAL primary key, 
 Modelo VARCHAR(30) NOT NULL,
 Tiempo_de_uso INT,
-Anio_fabricacion INT,
+Anio_fabricacion INT NOT NULL CHECK (Anio_fabricacion >= 2000),
 Kilometraje_recorrido BIGINT, 
-Capacidad_max_pasajeros INT NOT NULL CHECK(Capacidad_max_pasajeros >= 2000),
+Capacidad_max_pasajeros INT NOT NULL CHECK(Capacidad_max_pasajeros > 0),
 Estado VARCHAR(20) NOT NULL);
 
 create table PASAJEROS (Pasajero_id SERIAL primary key,
