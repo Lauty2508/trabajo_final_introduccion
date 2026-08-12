@@ -3,7 +3,7 @@ Modelo VARCHAR(30) NOT NULL,
 Tiempo_de_uso INT,
 Anio_fabricacion INT,
 Kilometraje_recorrido BIGINT, 
-Capacidad_max_pasajeros INT NOT NULL CHECK(Capacidad_max_pasajeros>0),
+Capacidad_max_pasajeros INT NOT NULL CHECK(Capacidad_max_pasajeros >= 2000),
 Estado VARCHAR(20) NOT NULL);
 
 create table PASAJEROS (Pasajero_id SERIAL primary key,

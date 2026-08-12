@@ -1,3 +1,4 @@
+console.log("VERSION NUEVA VIAJES.JS");
 function crearFilaViaje(viaje) {
     const origen = viaje.plataforma_origen_nombre;
     const destino = viaje.plataforma_destino_nombre;
@@ -323,3 +324,8 @@ botonCancelar.addEventListener("click", () => {
         "Nuevo Viaje";
 
 });
+
+const hoy = new Date().toISOString().split("T")[0];
+const campoFecha = document.getElementById("fecha");
+campoFecha.min = hoy;
+
