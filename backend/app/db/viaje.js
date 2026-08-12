@@ -86,31 +86,33 @@ export async function eliminarViaje(id) {
 }
 
 // Para obtener la cantidad de viajes asignados a una plataforma (como origen o destino)
-export async function obtenerCantidadViajesPorPlataforma(plataformaId, fecha, viajeIdExcluido = null) {
-    let params = [plataformaId, fecha];
+export async function obtenerCantidadViajesPorPlataforma(plataformaId, fecha, horario, viajeIdExcluido = null) {
+    // Sumamos el horario a los parámetros
+    let params = [plataformaId, fecha, horario];
     let query = "";
 
     if (viajeIdExcluido) {
         params.push(viajeIdExcluido);
         query = `
             SELECT 
-                (SELECT COUNT(*) FROM viaje WHERE Plataforma_destino_id = $1 AND Fecha_despegue <= $2 AND Viaje_id != $3) 
+                (SELECT COUNT(*) FROM viaje WHERE Plataforma_destino_id = $1 AND (Fecha_despegue < $2 OR (Fecha_despegue = $2 AND Horario_salida <= $3)) AND Viaje_id != $4) 
                 - 
-                (SELECT COUNT(*) FROM viaje WHERE Plataforma_origen_id = $1 AND Fecha_despegue <= $2 AND Viaje_id != $3) 
+                (SELECT COUNT(*) FROM viaje WHERE Plataforma_origen_id = $1 AND (Fecha_despegue < $2 OR (Fecha_despegue = $2 AND Horario_salida <= $3)) AND Viaje_id != $4) 
             AS ocupacion;
         `;
     } else {
         query = `
             SELECT 
-                (SELECT COUNT(*) FROM viaje WHERE Plataforma_destino_id = $1 AND Fecha_despegue <= $2) 
+                (SELECT COUNT(*) FROM viaje WHERE Plataforma_destino_id = $1 AND (Fecha_despegue < $2 OR (Fecha_despegue = $2 AND Horario_salida <= $3))) 
                 - 
-                (SELECT COUNT(*) FROM viaje WHERE Plataforma_origen_id = $1 AND Fecha_despegue <= $2) 
+                (SELECT COUNT(*) FROM viaje WHERE Plataforma_origen_id = $1 AND (Fecha_despegue < $2 OR (Fecha_despegue = $2 AND Horario_salida <= $3))) 
             AS ocupacion;
         `;
     }
 
     const res = await db.query(query, params);
     let ocupacion = parseInt(res.rows[0].ocupacion, 10);
+
     return ocupacion < 0 ? 0 : ocupacion;
 }
 
