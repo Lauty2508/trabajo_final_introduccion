@@ -250,7 +250,7 @@ document.addEventListener("click", async (event) => {
         return;
     }
 
-    const confirmar = confirm("¿Deseas eliminar esta plataforma?");
+    const confirmar = confirm("¿Deseas eliminar esta plataforma? Los viajes asociados a esta plataforma también serán eliminados");
 
     if (!confirmar) {
         return;

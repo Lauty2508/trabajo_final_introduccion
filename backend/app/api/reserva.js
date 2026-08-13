@@ -30,7 +30,7 @@ endpointsReserva.post("/", async (req, res) => {
             });
         }
 
-        // Regla: Una nave solo admitirá pasajeros siempre y cuando no supere su capacidad máxima
+
         const viaje = await obtenerUnViaje(req.body.vuelo);
         if (!viaje) {
             return res.status(400).json({
@@ -53,7 +53,7 @@ endpointsReserva.post("/", async (req, res) => {
                 message: "Operación rechazada. La nave asignada al vuelo no existe"
             });
         }
-
+  // Regla: Una nave solo admitirá pasajeros siempre y cuando no supere su capacidad máxima
         const reservasActuales = await obtenerCantidadReservasPorViaje(req.body.vuelo);
         if (reservasActuales >= nave.capacidad_max_pasajeros) {
             return res.status(400).json({

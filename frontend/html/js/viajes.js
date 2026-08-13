@@ -226,7 +226,7 @@ formViaje.addEventListener("submit", async (event) => {
         const finExistente = inicioExistente + (viaje.duracion * 60000);
 
         // Se verifica la superposición de rangos
-        return (inicioExistente < finNuevoViaje && inicioNuevoViaje < finExistente);
+        return (inicioExistente < finNuevoViaje && inicioNuevoViaje < finExistente505);
     });
 
     if (hayConflicto) {
@@ -320,7 +320,7 @@ document.addEventListener("click", async (event) => {
         return;
     }
 
-    const confirmar = confirm("¿Deseas eliminar este viaje?");
+    const confirmar = confirm("¿Deseas eliminar este viaje? Las reservas asociadas a este viaje también serán eliminadas");
 
     if (!confirmar) {
         return;
