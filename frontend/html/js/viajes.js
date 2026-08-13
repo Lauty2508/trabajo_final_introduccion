@@ -226,7 +226,7 @@ formViaje.addEventListener("submit", async (event) => {
         const finExistente = inicioExistente + (viaje.duracion * 60000);
 
         // Se verifica la superposición de rangos
-        return (inicioExistente < finNuevoViaje && inicioNuevoViaje < finExistente505);
+        return (inicioExistente < finNuevoViaje && inicioNuevoViaje < finExistente);
     });
 
     if (hayConflicto) {
