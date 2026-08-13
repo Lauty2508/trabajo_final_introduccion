@@ -41,7 +41,7 @@ endpointsReserva.post("/", async (req, res) => {
         const fechaReserva = new Date(req.body.fecha);
         const fechaViaje = new Date(viaje.fecha_despegue);
 
-        if (fechaReserva > fechaViaje) {
+        if (fechaReserva >= fechaViaje) {
             return res.status(400).json({
                 message: "Operación rechazada. La fecha de la reserva no puede ser posterior a la del viaje."
             });
@@ -58,6 +58,17 @@ endpointsReserva.post("/", async (req, res) => {
         if (reservasActuales >= nave.capacidad_max_pasajeros) {
             return res.status(400).json({
                 message: "Operación rechazada. La nave ha alcanzado su capacidad máxima de pasajeros para este vuelo"
+            });
+        }
+
+        const todasLasReservas = await obtenerTodasReservas();
+        const pasajeroDuplicado = todasLasReservas.some(reserva => 
+            reserva.vuelo_id == req.body.vuelo && reserva.pasajero_id == req.body.pasajero
+        );
+
+        if (pasajeroDuplicado) {
+            return res.status(400).json({
+                message: "Operación rechazada. El pasajero ya tiene una reserva para este viaje."
             });
         }
 
@@ -127,6 +138,19 @@ endpointsReserva.put("/:id", async (req, res) => {
         if (reservasActuales >= nave.capacidad_max_pasajeros) {
             return res.status(400).json({
                 message: "Operación rechazada. La nave ha alcanzado su capacidad máxima de pasajeros para este vuelo"
+            });
+        }
+
+        const todasLasReservas = await obtenerTodasReservas();
+        const pasajeroDuplicado = todasLasReservas.some(reserva => 
+            reserva.vuelo_id == req.body.vuelo && 
+            reserva.pasajero_id == req.body.pasajero &&
+            reserva.reserva_id != id 
+        );
+
+        if (pasajeroDuplicado) {
+            return res.status(400).json({
+                message: "Operación rechazada. El pasajero ya tiene una reserva para este viaje."
             });
         }
 

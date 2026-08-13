@@ -239,6 +239,7 @@ formReserva.addEventListener("submit", async (event) => {
     }
 
     const idViajeSeleccionado = document.getElementById("vuelo").value;
+    const idPasajeroSeleccionado = document.getElementById("pasajero").value;
     const fechaReservaStr = document.getElementById("fecha_reserva").value;
 
     const viajeSeleccionado = listaViajes.find(viaje => viaje.viaje_id == idViajeSeleccionado);
@@ -246,11 +247,31 @@ formReserva.addEventListener("submit", async (event) => {
     if (viajeSeleccionado) {
         const fechaReserva = new Date(fechaReservaStr);
         const fechaViaje = new Date(viajeSeleccionado.fecha_despegue.split("T")[0]);
-        if (fechaReserva > fechaViaje) {
+        if (fechaReserva >= fechaViaje) {
             alert("La fecha de la reserva no puede ser posterior a la fecha de despegue del viaje.");
             return;
         }
+
+        const respuestaReservas = await fetch("http://localhost:3000/api/v1/reserva");
+        const reservasExistentes = await respuestaReservas.json();
+
+        // Verificamos si ya existe una reserva con el mismo viaje y pasajero
+        const pasajeroDuplicado = reservasExistentes.some(reserva => {
+            const esMismoViaje = reserva.vuelo_id == idViajeSeleccionado;
+            const esMismoPasajero = reserva.pasajero_id == idPasajeroSeleccionado;
+
+            const esOtraReserva = reserva.reserva_id != reservaEditando; 
+
+            return esMismoViaje && esMismoPasajero && esOtraReserva;
+        });
+
+        if (pasajeroDuplicado) {
+            alert("Este pasajero ya tiene una reserva en el viaje seleccionado.");
+            return;
+        }
+        
     };
+
 
     const nuevaReserva = {
 
@@ -283,6 +304,9 @@ formReserva.addEventListener("submit", async (event) => {
     });
 
     const resultado = await respuesta.json();
+
+    console.log(resultado);
+    
     if (!respuesta.ok) {
         alert(resultado.message);
         return;
@@ -355,7 +379,7 @@ document.addEventListener("click", async (event) => {
 
     const id = event.target.dataset.id;
 
-    await fetch(
+    const respuesta = await fetch(
         "http://localhost:3000/api/v1/reserva",
         {
 
@@ -371,6 +395,10 @@ document.addEventListener("click", async (event) => {
 
         }
     );
+    
+    const resultado = await respuesta.json();
+
+    console.log(resultado);
 
     await obtenerReservas();
 

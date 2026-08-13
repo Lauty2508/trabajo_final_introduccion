@@ -1,4 +1,3 @@
-console.log("VERSION NUEVA VIAJES.JS");
 function crearFilaViaje(viaje) {
     const origen = viaje.plataforma_origen_nombre;
     const destino = viaje.plataforma_destino_nombre;

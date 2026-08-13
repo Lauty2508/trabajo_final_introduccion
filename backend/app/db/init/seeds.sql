@@ -11,7 +11,7 @@ VALUES('Galactica 3000', 500, 2024, 800000, 250, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('StarCruiser V', 800, 2020, 2500000, 100, 'Operativa');
+VALUES('StarCruiser VI', 800, 2020, 2500000, 100, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
@@ -23,7 +23,7 @@ VALUES('Mars Explorer II', 120, 2025, 150000, 30, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
-VALUES('Galactica 3000', 600, 2023, 950000, 250, 'Operativa');
+VALUES('Galactica 4000', 600, 2023, 950000, 250, 'Operativa');
 
 INSERT INTO public.nave
 (modelo, tiempo_de_uso, anio_fabricacion, kilometraje_recorrido, capacidad_max_pasajeros, estado)
