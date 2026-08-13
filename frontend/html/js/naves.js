@@ -188,7 +188,8 @@ const resultado = await respuesta.json();
 
 
     console.log(resultado);
-
+    alert(resultado.message);
+    
     cerrarFormulario();
     naveEditando = null;
 

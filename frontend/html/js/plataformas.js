@@ -185,8 +185,6 @@ formPlataforma.addEventListener("submit", async (event) => {
 
     const metodo = plataformaEditando ? "PUT" : "POST";
 
-    console.log(nuevaPlataforma);
-
     const respuesta = await fetch(url, {
 
         method: metodo,
@@ -207,6 +205,8 @@ formPlataforma.addEventListener("submit", async (event) => {
         alert(resultado.message);
         return;
     }
+
+    alert(resultado.message);
 
     cerrarFormulario();
 

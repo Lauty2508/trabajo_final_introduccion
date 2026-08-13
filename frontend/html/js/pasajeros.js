@@ -198,6 +198,8 @@ formPasajero.addEventListener("submit", async (event) => {
         return;
     }
 
+    alert(resultado.message);
+
     cerrarFormulario();
 
     pasajeroEditando = null;
