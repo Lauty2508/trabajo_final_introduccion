@@ -118,26 +118,6 @@ botonNuevaNave.addEventListener("click", () => {
 
 });
 
-async function mayoresQue(input, numero) {
-    // Bloquea caracteres no deseados (signo menos y notación científica)
-    input.addEventListener('keydown', (e) => {
-    if (e.key === '-' || e.key === 'e' || e.key === 'E') {
-        e.preventDefault();
-    }
-    });
-
-    // Valida cuando el usuario termina de escribir o cambia de campo
-    input.addEventListener('change', (e) => {
-    const valor = parseFloat(e.target.value);
-
-    // Comprueba si el valor es menor o igual al número (o si no es un número válido)
-    if (isNaN(valor) || valor < numero) {
-        e.target.value = ''; // Limpia el campo
-        alert(`El número debe ser estrictamente mayor que ${numero}.`);
-    }
-    });
-}
-
 formNave.addEventListener("submit", async (event) => {
     event.preventDefault();
     const valorTiempo = parseFloat(document.getElementById("tiempo").value);
@@ -188,6 +168,7 @@ const resultado = await respuesta.json();
 
 
     console.log(resultado);
+    alert(resultado.message);
 
     cerrarFormulario();
     naveEditando = null;
