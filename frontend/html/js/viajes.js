@@ -320,7 +320,7 @@ document.addEventListener("click", async (event) => {
         return;
     }
 
-    const confirmar = confirm("¿Deseas eliminar este viaje?");
+    const confirmar = confirm("¿Deseas eliminar este viaje? Las reservas asociadas a este viaje también serán eliminadas");
 
     if (!confirmar) {
         return;

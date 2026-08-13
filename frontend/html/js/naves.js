@@ -188,8 +188,7 @@ const resultado = await respuesta.json();
 
 
     console.log(resultado);
-    alert(resultado.message);
-    
+
     cerrarFormulario();
     naveEditando = null;
 
@@ -230,7 +229,7 @@ document.addEventListener("click", async (event) => {
         return;
     }
 
-    const confirmar = confirm("¿Deseas eliminar esta nave?");
+    const confirmar = confirm("¿Deseas eliminar esta nave? Los viajes y reservas asociados a esta nave también serán eliminados");
 
     if (!confirmar) {
         return;

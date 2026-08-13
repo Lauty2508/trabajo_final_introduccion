@@ -242,7 +242,7 @@ document.addEventListener("click", async (event) => {
         return;
     }
 
-    const confirmar = confirm("¿Deseas eliminar este pasajero?");
+    const confirmar = confirm("¿Deseas eliminar este pasajero? Los viajes y reservas asociados a este pasajero también serán eliminados");
 
     if (!confirmar) {
         return;
